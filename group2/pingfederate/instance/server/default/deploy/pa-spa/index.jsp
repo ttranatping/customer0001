@@ -1,16 +1,16 @@
 <html>
 
         <head>
-                <base href="https://localhost:9031/"/>
+                <base href="https://sso.pingapac.com/"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 <link rel="stylesheet" type="text/css" href="/assets/css/apps.css">
-                <link rel="stylesheet" href="/menu/styles.css">
-                <script src="/js/application.js"></script>
+                <link rel="stylesheet" href="/assets/menu/styles.css">
+                <script src="/assets/js/application.js"></script>
                 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
                 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
                 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-                <script src="/menu/script.js"></script>
+                <script src="/assets/menu/script.js"></script>
                 <script src="https://css-tricks.com/examples/PopFromTopMessage/js/modernizr.custom.80028.js"></script>
                 <title>My Bank</title>
 
@@ -21,7 +21,7 @@
                 <meta http-equiv="pragma" content="no-cache" />
 
                 <script type="text/javascript">
-var apiBaseUrl = "https://tomcat-anz.pingapac.com";
+var apiBaseUrl = "https://bankapp.pingapac.com";
 
 var idx = 0;
 

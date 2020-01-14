@@ -1,0 +1,58 @@
+html
+{
+	background-color:#b7e8f4;
+}
+
+.header
+{
+}
+
+.footer
+{
+        background-color:#47b1cc;
+}
+
+.logo
+{
+	background-color:#ffb400;
+}
+
+h1
+{
+	color: #464d55;
+}
+
+input,select
+{
+	border: 1px solid #1a92b0;
+}
+
+input[type="Button"],input[type="Submit"]
+{
+	background-color:#c7e5ec;
+}
+
+.row1
+{
+}
+
+.row2
+{
+        background-color: #cfe2e8;
+}
+
+.row3
+{
+        background-color: white;
+}
+
+.row4
+{
+        background-color: #40869b;
+        color: white;
+}
+
+.row4 h3,.row4 h2, .row4 th, .row4 td
+{
+        color: white;
+}

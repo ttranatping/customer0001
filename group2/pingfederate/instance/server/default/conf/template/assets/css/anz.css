@@ -1,0 +1,66 @@
+html
+{
+        background-color:#c9e3f2;
+}
+
+.header
+{
+	padding-top: 15px;
+	background-color:#054263;
+}
+
+.footer
+{
+        background-color:#054263;
+}
+
+.logo
+{
+        width: 200px;
+        background-size: 200px;
+        background-repeat: no-repeat;
+	background-color:#054263;
+	background-image:url(anz.png);
+}
+
+h1
+{
+	color:#054263;
+}
+
+input,select
+{
+        border: 1px solid #127eb8;
+}
+
+input[type="Button"],input[type="Submit"]
+{
+        background-color:#127eb8;
+	color:white;
+}
+
+.row1
+{
+}
+
+.row2
+{
+        background-color: #c7e2f0;
+}
+
+.row3
+{
+        background-color: white;
+}
+
+.row4
+{
+        background-color: #51a6d3;
+	color: black;
+}
+
+.row4 h3,.row4 h2, .row4 th, .row4 td
+{
+        color: black;
+}
+

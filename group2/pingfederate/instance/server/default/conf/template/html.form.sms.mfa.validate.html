@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <base href="$CurrentPingFedBaseURL"/>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data request</title>
+	<link rel="icon" href="https://foundation.zurb.com/building-blocks/assets/consent/img/favicon/foundation-favicon.ico" type="image/x-icon">
+	<link href="assets/consent/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/consent/foundation.css">
+    <link rel="stylesheet" href="assets/consent/app.css">
+    <link rel="stylesheet" href="assets/consent/layout.css">
+    <link rel="stylesheet" href="assets/consent/card-user-profile.css">
+    <link rel="stylesheet" media="all" type="text/css" href="assets/css/main-sms-otp.css" />
+    <meta class="foundation-mq"></head>
+  </head>
+  <body>
+	<form method="POST" action="$action" autocomplete="off">
+		<input type="hidden" name="$ok" value=""/>
+		<input type="hidden" name="$cancel" value=""/>
+		<input type="hidden" name="CODE_VERIFICATION_STATE" value="true"/>
+		<input type="hidden" name="CSRF_TOKEN" value="$csrfToken"/>
+		
+    <div class="grid-container" style="max-width: 600px">
+		<div class="row align-center medium-unstack">
+			<div class="medium-5 large-4 column">
+				<div class="card-user-profile">
+					<img class="card-user-profile-img" src="./assets/consent/background.png" alt="picture of space">
+					<div class="card-user-profile-content card-section">
+						<div class="card-user-profile-avatar">
+							<img src="./assets/consent/logo.jpg" alt="picture of yeti">
+						</div>
+						<h1>One Time Password</h1>
+						<p class="card-user-profile-info">Accredited Consumer Data Right recipients will never ask you for your bank's password.</p>
+						<p class="card-user-profile-info">A One Time Password has been sent to your mobile $obfuscatedSMS to securely connect to Bendigo Bank. <strong>Please enter this below</strong></p>
+        		        #if($errorMessage)
+                    	<div style="color: red">
+                         $errorMessage
+                    	</div>
+                    	#end
+						<label>One Time Password
+							<input type="text" class="passcode-input" id="OTP" name="CODE_VERIFICATION_VALUE" value="" autocomplete="off" maxlength="6">
+  						</label>
+  						<p class="card-user-profile-info">Didn't get the code? Go to the Bendigo Bank website to update your contact details.</p>
+					</div>
+					<div class="card-user-profile-actions">
+						<a onclick="postCancel();" class="card-user-profile-button button hollow secondary">Cancel</a>
+						<a onclick="postOk();" class="card-user-profile-button button hollow">Continue</a>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</div>
+
+	<script type="text/javascript">
+
+		function postOk() {
+			document.forms[0]['$ok'].value = 'clicked';
+			document.forms[0].submit();
+		}
+		function postCancel() {
+			document.forms[0]['$cancel'].value = 'clicked';
+			document.forms[0].submit();
+		}
+
+	function postOnReturn(e)
+			{
+				var keycode;
+				if (window.event) keycode = window.event.keyCode;
+				else if (e) keycode = e.which;
+				else return true;
+
+				if (keycode == 13)
+				{
+					document.forms[0].submit();
+					return false;
+				}
+				else
+					return true;
+			 }
+	</script>
+	<script src="./assets/consent/card-user-profile.js"></script>
+		<input type="hidden" name="cSRFToken" value="$cSRFToken"/>
+		<input type="hidden" name="submitform" value="true"/>
+		<input type="hidden" name="approved" value=""/>
+	</form>
+  </body>
+</html>

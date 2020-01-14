@@ -26,6 +26,7 @@
         <urn:Field name="JWKS Endpoint Cache Duration">720</urn:Field>
         <urn:Field name="Publish Key ID X.509 URL">false</urn:Field>
         <urn:Field name="Publish Thumbprint X.509 URL">false</urn:Field>
+        <urn:Field name="Expand Scope Groups">false</urn:Field>
     </urn:Fields>
     <urn:AdvancedFields>
         <urn:Field name="Include Key ID Header Parameter">true</urn:Field>
@@ -44,17 +45,19 @@
         <urn:Field name="JWKS Endpoint Cache Duration">720</urn:Field>
         <urn:Field name="Publish Key ID X.509 URL">false</urn:Field>
         <urn:Field name="Publish Thumbprint X.509 URL">false</urn:Field>
+        <urn:Field name="Expand Scope Groups">false</urn:Field>
     </urn:AdvancedFields>
     <urn:Tables>
         <urn:Table name="Symmetric Keys"/>
         <urn:Table name="Certificates">
-            <urn:Row>
+            <urn:Row defaultRow="false">
                 <urn:Field name="Key ID">k1</urn:Field>
                 <urn:Field name="Certificate">v8m5h9qrw85dgmndgv47k76xz</urn:Field>
             </urn:Row>
         </urn:Table>
     </urn:Tables>
     <urn:ExtendedContractAttributes>
+        <urn:AttributeName>uid</urn:AttributeName>
         <urn:AttributeName>Username</urn:AttributeName>
         <urn:AttributeName>OrgName</urn:AttributeName>
     </urn:ExtendedContractAttributes>

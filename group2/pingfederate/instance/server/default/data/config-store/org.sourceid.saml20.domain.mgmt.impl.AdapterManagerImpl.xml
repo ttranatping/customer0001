@@ -2,7 +2,7 @@
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
     <con:map name="IdpAuthnAdapterInstances">
         <con:item name="HTMLFormPD">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
-        <con:item name="SMSAdapter">com.pingidentity.adapter.idp.ClickatelSMSMFAAdapter</con:item>
+        <con:item name="pingIDSDKAdapter">com.pingidentity.adapters.pingid.PingIDSDKAdapter</con:item>
     </con:map>
     <con:map name="IdpAdapterInstanceParents"/>
 </con:config>

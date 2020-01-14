@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1578975110251" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1579043025555" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
-        <urn:AuthnSelectionTree treeName="PingAccess Step Up" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="PA Step Up with PID SDK" disabled="false" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction authnSelectorId="paStepUpSelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <urn:AstChild context="2FA">
@@ -14,9 +14,9 @@
                     </urn:AstChild>
                     <urn:AstChild context="Success">
                         <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <urn:AuthnSourceKey type="ADAPTER">SMSAdapter</urn:AuthnSourceKey>
+                            <urn:AuthnSourceKey type="ADAPTER">pingIDSDKAdapter</urn:AuthnSourceKey>
                             <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
-                            <urn:InputIdMapping Type="Adapter" AttributeSourceId="HTMLFormPD" Value="mobile"/>
+                            <urn:InputIdMapping Type="Adapter" AttributeSourceId="HTMLFormPD" Value="username"/>
                         </urn:AstAction>
                         <urn:AstChild context="Fail">
                             <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -31,6 +31,7 @@
                                     <urn1:AttributeMap Name="mail" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="mail" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="subject" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="2FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="username" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                 </urn:OutboundAttributeMapping>
                             </urn:AstAction>
@@ -58,6 +59,7 @@
                             <urn1:AttributeMap Name="mail" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="mail" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="subject" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="1FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="username" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                         </urn:OutboundAttributeMapping>
                     </urn:AstAction>

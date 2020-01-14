@@ -3,6 +3,6 @@
     <applicationPolicy idleTimeoutMins="60" maxTimeoutMins="480"/>
     <globalPolicy enableSessions="true" idleTimeoutDisplayUnit="MINUTES" idleTimeoutMins="60" maxTimeoutDisplayUnit="MINUTES" maxTimeoutMins="480" persistentSessions="false"/>
     <sourcePolicies>
-        <policy authnContextSensitive="false" authnSourceId="SMSAdapter" authnSourceType="ADAPTER" enableSessions="false" id="bekl4HK8FXfsRpMoeas5peHlw" persistent="false" timeoutDisplayUnit="MINUTES"/>
+        <policy authnContextSensitive="false" authnSourceId="pingIDSDKAdapter" authnSourceType="ADAPTER" enableSessions="false" id="E7eEMqSMQNbXMZfeGapWkhypL" persistent="false" timeoutDisplayUnit="MINUTES"/>
     </sourcePolicies>
 </authnSessionPolicies>

@@ -7,7 +7,7 @@
             <urn1:AttributeMap Name="address.locality" Type="Text" Value="Smallville" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="birthdate" Type="Text" Value="1977-12-31" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="gender" Type="Text" Value="female" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-            <urn1:AttributeMap Name="preferred_username" Type="Text" Value="mgsample" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="preferred_username" Type="Token" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="locale" Type="Text" Value="en_US" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="address.country" Type="Text" Value="USA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="updated_at" Type="Text" Value="2011-01-03T23:58:42+0000" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>

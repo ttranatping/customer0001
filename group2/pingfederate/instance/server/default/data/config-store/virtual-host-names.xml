@@ -2,5 +2,6 @@
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
     <con:list name="domain-names">
         <con:ListItem>pingfederate</con:ListItem>
+        <con:ListItem>localhost</con:ListItem>
     </con:list>
 </con:config>

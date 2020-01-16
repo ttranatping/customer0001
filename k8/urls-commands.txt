@@ -1,0 +1,33 @@
+URL's:
+PF Admin - https://localhost:9999/pingfederate/app
+PA Admin - https://localhost:9000/
+Sample DR - http://localhost:8088/
+Delegated Admin - https://test.pingid-fedid.bbldtl.int/delegator
+Bendigo Bank App 1 - https://brand1.pingid-fedid.bbldtl.int/spa
+Bendigo Bank App 2 - https://brand1.pingid-fedid.bbldtl.int/get
+Adelaide Bank App - https://brand2.pingid-fedid.bbldtl.int/spa2
+
+Port forwarding commands:
+kubectl port-forward svc/pingfederate 9999:9999
+kubectl port-forward svc/pingaccess 9000:9000
+sudo kubectl port-forward svc/pingaccess 443:443
+sudo kubectl port-forward svc/pingdirectory 389:389
+
+Clean environment:
+kubectl delete -R -f 07-clusteredpingfederate
+kubectl delete -R -f 04-clustered-pingaccess
+kubectl delete -R -f 03-replicated-directory
+kubectl delete -R -f 01-standalone
+
+-- or --
+kubectl delete -R -f 01-standalone/pingaccess
+kubectl delete -R -f 01-standalone/pingdirectory
+
+
+Build environment:
+kustomize build 03-replicated-directory | kubectl apply  -f -
+kustomize build 07-clusteredpingfederate | kubectl apply  -f -
+kustomize build 04-clustered-pingaccess | kubectl apply  -f -
+
+
+

@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    role: bankapi
+  name: bankapi
+spec:
+  ports:
+  - name: bankapi
+    port: 8083
+  selector:
+    role: bankapi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    role: bankapi
+  name: bankapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: bankapi
+  template:
+    metadata:
+      labels:
+        role: bankapi
+      name: bankapi
+    spec:
+      containers:
+      - envFrom:
+        image: tamatping/bankapi:latest
+        name: bankapi
+        ports:
+        - containerPort: 8083
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1.5Gi
+          requests:
+            cpu: "1"
+            memory: 1.5Gi

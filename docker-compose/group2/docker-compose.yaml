@@ -1,0 +1,130 @@
+version: "3.1"
+
+services:
+  bankapi:
+    image: bankapi:latest
+    #command: entrypoint.sh start-server
+    ports:
+      - 8083:8083
+    networks:
+      - pingnet-dmz
+  pingaccess:
+    image: pingidentity/pingaccess:6.0.0-alpine-edge
+    command: entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/ttranatping/salesu2020.git
+      - SERVER_PROFILE_PATH=group2/pingaccess
+      - SERVER_PROFILE_PARENT=PA
+      - SERVER_PROFILE_PA_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PA_PATH=baseline/pingaccess
+      - PING_IDENTITY_ACCEPT_EULA=YES
+      - OPERATIONAL_MODE=STANDALONE
+      - PA_CONSOLE_HOST=pingaccess
+      - INITIAL_ADMIN_PASSWORD=2FederateM0re
+    env_file:
+      # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
+      # devops user/key details for evaluation licenses and for docker image/git tags
+      - ~/.pingidentity/devops
+    # Example: Examples below for mounting local directories for inbound server profile and persisting
+    #          server build.  The local /opt/out directory must be empty when building new server
+    #             /opt/out - Resulting server build
+    #             /opt/in  - Inbound server-profile detail in liue of SERVER_PROFILE_URL (must be commented out)
+    #volumes:
+    #   - ${HOME}/projects/devops/volumes/full-stack.pingaccess:/opt/out
+    #   - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingaccess:/opt/in
+    ports:
+      - 443:3000
+      - 9000:9000
+    networks:
+      - pingnet-dmz
+
+  pingfederate:
+    image: pingidentity/pingfederate:10.0.0-centos-edge
+    command: entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/ttranatping/salesu2020.git
+      - SERVER_PROFILE_PATH=group2/pingfederate
+      - SERVER_PROFILE_PARENT=PF
+      - SERVER_PROFILE_PF_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PF_PATH=baseline/pingfederate
+      - PING_IDENTITY_ACCEPT_EULA=YES
+      - OPERATIONAL_MODE=STANDALONE
+      - PF_ENGINE_PUBLIC_HOSTNAME=sso.pingapac.com
+      - PF_ENGINE_PUBLIC_PORT=443
+    env_file:
+      - ~/.pingidentity/devops
+    #volumes:
+    #  - ${HOME}/projects/devops/volumes/full-stack.pingfederate:/opt/out
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingfederate:/opt/in
+    ports:
+      - 9031:9031
+      - 9999:9999
+    networks:
+      - pingnet-dmz
+
+  pingdirectory:
+    image: pingidentity/pingdirectory:8.0.0.0-edge
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/ttranatping/salesu2020.git
+      - SERVER_PROFILE_PATH=group2/pingdirectory
+      - SERVER_PROFILE_PARENT=PD
+      - SERVER_PROFILE_PD_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PD_PATH=baseline/pingdirectory
+      - PING_IDENTITY_ACCEPT_EULA=YES
+    env_file:
+      - ~/.pingidentity/devops
+    #volumes:
+    #  - ${HOME}/projects/devops/volumes/full-stack.pingdirectory:/opt/out
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingdirectory:/opt/in
+    ports:
+      - 1636-1646:636
+      - 1443-1453:443
+    networks:
+      - pingnet-dmz
+
+  pingdatagovernance:
+    image: pingidentity/pingdatagovernance:${PING_IDENTITY_DEVOPS_TAG}
+    environment: 
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=pdg-pap-integration/pingdatagovernance
+#      - SERVER_PROFILE_BRANCH=pdp-pap-integration
+      - SERVER_PROFILE_PARENT=PDG
+      - SERVER_PROFILE_PDG_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PDG_PATH=baseline/pingdatagovernance
+      - PING_IDENTITY_ACCEPT_EULA=YES
+    env_file: 
+      - ~/.pingidentity/devops
+    #volumes:
+    #  - ${HOME}/projects/devops/volumes/full-stack.pingdatagovernance:/opt/out
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingdatagovernance:/opt/in
+    ports:
+      - 8080:80
+      - 7443:443
+    networks:
+      - pingnet-dmz
+      - pingnet-internal
+
+  pingdatagovernancepap:
+    image: pingidentity/pingdatagovernancepap:${PING_IDENTITY_DEVOPS_TAG}
+    environment: 
+      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=pdg-pap-integration/pingdatagovernancepap
+#      - SERVER_PROFILE_BRANCH=pdp-pap-integration
+#      - SERVER_PROFILE_PARENT=PDG
+#      - SERVER_PROFILE_PDG_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
+#      - SERVER_PROFILE_PDG_PATH=baseline/pingdatagovernancepap
+      - PING_IDENTITY_ACCEPT_EULA=YES
+      - HTTPS_PORT=8443
+    env_file: 
+      - ~/.pingidentity/devops
+    #volumes:
+    #  - ${HOME}/projects/devops/volumes/full-stack.pingdatagovernance:/opt/out
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingdatagovernance:/opt/in
+    ports:
+      - 8443:8443
+    networks:
+      - pingnet-dmz
+             
+networks:
+    pingnet-internal:
+    pingnet-dmz:

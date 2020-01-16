@@ -1,0 +1,70 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+resources:
+- ../01-standalone/pingdirectory
+- ../01-standalone/pingfederate
+- ../01-standalone/pingaccess
+- ../01-standalone/pingdatagovernance
+- ../01-standalone/pingdatagovernancepap
+- ../08-bankapi
+
+# The only difference in standalone deployments vs "fullstack" (integrated) is the product configurations. 
+# here we replace standalone server-profiles ("getting-started") with "baseline" for each product
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: pingfederate-environment-variables
+  behavior: replace
+  envs:
+    - env_vars.pingfederate
+- name: pingdirectory-environment-variables
+  behavior: replace
+  envs:
+    - env_vars.pingdirectory
+- name: pingaccess-environment-variables
+  behavior: replace
+  envs:
+    - env_vars.pingaccess
+- name: pingdatagovernance-environment-variables
+  behavior: replace
+  envs:
+    - env_vars.pingdatagovernance
+- name: pingdatagovernancepap-environment-variables
+  behavior: replace
+  envs:
+    - env_vars.pingdatagovernancepap
+
+patches:
+- target:
+    kind: Service
+    name: ^pingfederate$
+  patch: |-
+    - op: replace
+      path: /spec/ports/1/port
+      value: 443
+    - op: add
+      path: /spec/ports/1/targetPort
+      value: 9031
+- target:
+    kind: Deployment
+    name: ^pingfederate$
+  patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/image
+      value: pingidentity/pingfederate:1912-centos-10.0.0
+- target:
+    kind: Deployment
+    name: ^pingaccess$
+  patch: |-
+    - op: add
+      path: /spec/template/spec/initContainers
+      value: 
+        - name: init
+          image: curlimages/curl:latest
+          command: ['sh', '-c', 'until curl --connect-timeout 1 --silent -k https://pingfederate/pf/heartbeat.ping ; do echo waiting for pf heartbeat ; sleep 2 ; done']
+
+
+

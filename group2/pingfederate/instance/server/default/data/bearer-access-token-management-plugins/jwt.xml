@@ -60,5 +60,6 @@
         <urn:AttributeName>uid</urn:AttributeName>
         <urn:AttributeName>Username</urn:AttributeName>
         <urn:AttributeName>OrgName</urn:AttributeName>
+        <urn:AttributeName>cnf</urn:AttributeName>
     </urn:ExtendedContractAttributes>
 </urn:AccessTokenManagerConfiguration>

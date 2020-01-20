@@ -24,7 +24,7 @@
 									<img src="./assets/consent/logo.jpg" alt="picture of yeti">
 								</div>
 								<h1>Transfer Form</h1>
-								<p class="card-user-profile-info">Hi <%=request.getHeader("X-GIVENNAME")%></p>
+								<p class="card-user-profile-info">Hi <%=request.getHeader("X-FIRSTNAME")%></p>
 								<%
 								if(request.getParameter("amount") != null)
 								{
@@ -48,7 +48,7 @@
 									
 								%>
 									<p class="card-user-profile-info">You have configured your payment threshold to be $<%=paymentThreshold%>. Anything above this will require stronger authentication. Your maximum amount is $<%=paymentMax%>.</p>
-									<p class="card-user-profile-info">You can change the threshold amount by <a href="https://brand1.pingapac.com/pf/idprofile.ping?LocalIdentityProfileID=yABlNHg7OWx28Rcw" target="_blank">updating your profile</a>.</p>
+									<p class="card-user-profile-info">You can change the threshold amount by <a href="https://sso.pingapac.com/pf/idprofile.ping?LocalIdentityProfileID=RBSQIwi5KWYN9ZGK" target="_blank">updating your profile</a>.</p>
 								<%
 								}
 								%>

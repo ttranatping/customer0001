@@ -32,9 +32,23 @@
             <loc:appliesTo profile="false" registration="true"/>
             <loc:parameter param-name="Unique ID Field" value="false"/>
             <loc:parameter param-name="Mask Log Values" value="false"/>
-        </loc:field>	
+        </loc:field>
+        <loc:field type="TEXT" default-value="1000" id="paymentmfathreshold" label="Payment MFA Threshold">
+            <loc:appliesTo profile="true" registration="true"/>
+            <loc:parameter param-name="Read-Only" value="false"/>
+            <loc:parameter param-name="Required" value="false"/>
+            <loc:parameter param-name="Unique ID Field" value="false"/>
+            <loc:parameter param-name="Mask Log Values" value="false"/>
+        </loc:field>
+        <loc:field type="TEXT" default-value="20000" id="paymentlimit" label="Payment Limit">
+            <loc:appliesTo profile="true" registration="true"/>
+            <loc:parameter param-name="Read-Only" value="false"/>
+            <loc:parameter param-name="Required" value="false"/>
+            <loc:parameter param-name="Unique ID Field" value="false"/>
+            <loc:parameter param-name="Mask Log Values" value="false"/>
+        </loc:field>
     </loc:fields>
-    <loc:email-verification-config emailVerificationEnabled="false" verifyEmailTemplateName="message-template-email-ownership-verification.html" emailVerificationSentTemplateName="local.identity.email.verification.sent.html" emailVerificationSuccessTemplateName="local.identity.email.verification.success.html" emailVerificationErrorTemplateName="local.identity.email.verification.error.html" otlTimeToLive="1440" verificationEmailField="" verificationStatusField=""/>
+    <loc:email-verification-config emailVerificationEnabled="false" verifyEmailTemplateName="message-template-email-ownership-verification.html" emailVerificationSentTemplateName="local.identity.email.verification.sent.html" emailVerificationSuccessTemplateName="local.identity.email.verification.success.html" emailVerificationErrorTemplateName="local.identity.email.verification.error.html" otlTimeToLive="1440" verificationEmailField="" verificationStatusField="" notificationPublisherId=""/>
     <loc:registration-config captchaEnabled="false" templateName="local.identity.registration.html"/>
     <loc:profile-config templateName="local.identity.profile.html" deleteIdentityEnabled="true"/>
     <loc:datastore-mapping>
@@ -45,9 +59,11 @@
             <urn:Parameter Name="object_class" Value="inetOrgPerson" xmlns:urn="urn:sourceid.org:saml2:metadata-extension:v2"/>
         </loc:DataSource>
         <loc:Attribute fieldName="entryUUID" datastore-field="entryUUID"/>
+        <loc:Attribute fieldName="uid" datastore-field="uid"/>
+        <loc:Attribute fieldName="paymentmfathreshold" datastore-field="o"/>
+        <loc:Attribute fieldName="mail" datastore-field="mail"/>
+        <loc:Attribute fieldName="paymentlimit" datastore-field="l"/>
         <loc:Attribute fieldName="cn" datastore-field="cn"/>
         <loc:Attribute fieldName="sn" datastore-field="sn"/>
-        <loc:Attribute fieldName="mail" datastore-field="mail"/>
-        <loc:Attribute fieldName="uid" datastore-field="uid"/>	
     </loc:datastore-mapping>
 </loc:localIdentity>

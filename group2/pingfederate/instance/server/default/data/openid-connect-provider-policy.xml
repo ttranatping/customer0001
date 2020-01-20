@@ -10,6 +10,7 @@
             <urn1:AttributeMap Name="preferred_username" Type="Token" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="locale" Type="Text" Value="en_US" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="address.country" Type="Text" Value="USA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="payment_limit" Type="LDAP" AttributeSourceId="ldap" Value="l" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="updated_at" Type="Text" Value="2011-01-03T23:58:42+0000" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="address.postal_code" Type="Text" Value="11223" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="address.region" Type="Text" Value="ME" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
@@ -19,14 +20,21 @@
             <urn1:AttributeMap Name="email_verified" Type="Text" Value="true" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="profile" Type="Text" Value="https://www.pingidentity.com/products/pingfederate/" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="phone_number_verified" Type="Text" Value="true" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-            <urn1:AttributeMap Name="given_name" Type="Text" Value="Mary" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="given_name" Type="LDAP" AttributeSourceId="ldap" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="middle_name" Type="Text" Value="Good" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="picture" Type="Text" Value="https://www.pingidentity.com/images/ping-logo.png" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="payment_mfa_threshold" Type="LDAP" AttributeSourceId="ldap" Value="o" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="name" Type="Text" Value="Mary Good Sample" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="phone_number" Type="Text" Value="(555) 555-5555" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="address.formatted" Type="Text" Value="123 Main Street, Smallville, ME USA 11223" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="family_name" Type="Text" Value="Sample" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="address.street_address" Type="Text" Value="123 Main Street" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                <urn1:Parameter Name="filter" Value="entryUUID=${Username}"/>
+                <urn1:Parameter Name="search_base" Value="ou=People,dc=example,dc=com"/>
+                <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+                <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+            </urn1:AttributeSource>
             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         </urn:UserInfoMapping>
         <urn:scopeAttributesMap/>

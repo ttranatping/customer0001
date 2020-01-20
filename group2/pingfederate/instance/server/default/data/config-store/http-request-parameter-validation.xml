@@ -77,4 +77,7 @@
     <con:map name="RequestedFormat">
         <con:item name="UriValidator"/>
     </con:map>
+    <con:map name="client_id">
+        <con:item name="LengthValidator">256</con:item>
+    </con:map>
 </con:config>

@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
-    <con:item name="default-scope-description">default</con:item>
-    <con:item name="lastUpdated">1548660082795</con:item>
     <con:map name="scope-descriptions">
-        <con:item name="address">Address access</con:item>
-        <con:item name="phone">Phone Number access</con:item>
-        <con:item name="edit">Edit permissions</con:item>
-        <con:item name="openid">OpenID Connect login</con:item>
-        <con:item name="profile">Profile access</con:item>
-        <con:item name="admin">Admin permissions</con:item>
-        <con:item name="email">Email Address access</con:item>
+        <con:item name="openid">OpenID Connect</con:item>
+        <con:item name="offline_access">Offline access</con:item>
+        <con:item name="profile">View my profile</con:item>
     </con:map>
-    <con:list name="dynamic-common-scopes"/>
+    <con:item name="lastUpdated">1575032171888</con:item>
     <con:map name="scope-group-descriptions"/>
     <con:map name="scope-group-mappings"/>
-    <con:map name="exclusive-scope-descriptions"/>
-    <con:list name="dynamic-exclusive-scopes"/>
+    <con:list name="dynamic-common-scopes"/>
+    <con:map name="exclusive-scope-descriptions">
+        <con:item name="bank:accounts.basic:read">bank:accounts.basic:read</con:item>
+        <con:item name="bank:accounts.detail:read">bank:accounts.detail:read</con:item>
+        <con:item name="bank:payees:read">bank:payees:read</con:item>
+        <con:item name="bank:transactions:read">bank:transactions:read</con:item>
+        <con:item name="common:customer.detail:read">common:customer.detail:read</con:item>
+        <con:item name="cdr:registration">cdr:registration</con:item>
+        <con:item name="common:customer.basic:read">common:customer.basic:read</con:item>
+        <con:item name="bank:regular_payments:read">bank:regular_payments:read</con:item>
+    </con:map>
     <con:map name="exclusive-scope-group-descriptions"/>
     <con:map name="exclusive-scope-group-mappings"/>
+    <con:list name="dynamic-exclusive-scopes"/>
 </con:config>

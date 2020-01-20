@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <authnSessionPolicies>
-    <applicationPolicy idleTimeoutMins="60" maxTimeoutMins="480"/>
-    <globalPolicy enableSessions="true" idleTimeoutDisplayUnit="MINUTES" idleTimeoutMins="60" maxTimeoutDisplayUnit="MINUTES" maxTimeoutMins="480" persistentSessions="false"/>
-    <sourcePolicies>
-        <policy authnContextSensitive="false" authnSourceId="pingIDSDKAdapter" authnSourceType="ADAPTER" enableSessions="false" id="E7eEMqSMQNbXMZfeGapWkhypL" persistent="false" timeoutDisplayUnit="MINUTES"/>
-    </sourcePolicies>
+    <globalPolicy enableSessions="false" idleTimeoutMins="60" maxTimeoutMins="480"/>
+     <sourcePolicies/>
 </authnSessionPolicies>

@@ -16,15 +16,16 @@
     <z:item name="MaxPasswordAttempts">5</z:item>
 
     <!-- 
-        The number of malicious actions allowed before a user is locked out
+        The number of malicious actions allowed before an OAuth client is locked out. Currently, the only operation
+        that is tracked as a malicious action is an attempt to revoke an invalid access token or refresh token.
 
         [System Default: 5]
     -->
     <z:item name="MaxMaliciousActions">5</z:item>
     
     <!-- 
-        The period of time in minutes that a user is locked out after MaxConsecutiveFailures failed login attempts
-        or after MaxMaliciousActions malicious actions.
+        The period of time in minutes that a user or client is locked out after MaxConsecutiveFailures failed login
+        attempts or after MaxMaliciousActions malicious actions.
 
         [System Default: 1]
     -->

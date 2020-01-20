@@ -210,7 +210,7 @@ updateBalance();
         left: 0;
         display: none;
         right: 0;
-        background: red;
+        background: orange;
         color: #fff;
         text-align: center;
         line-height: 2.5;
@@ -267,7 +267,7 @@ updateBalance();
 
 #top, #bottom, #left, #right {
         display:none;
-        background: red;
+        background: orange;
         position: fixed;
         }
         #left, #right {

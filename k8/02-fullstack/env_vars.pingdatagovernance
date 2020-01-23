@@ -3,4 +3,5 @@ SERVER_PROFILE_PATH=group2/pingdatagovernance
 SERVER_PROFILE_PARENT=PDG
 SERVER_PROFILE_PDG_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
 SERVER_PROFILE_PDG_PATH=baseline/pingdatagovernance
+PAP_HTTPS_PORT=443
 PING_IDENTITY_ACCEPT_EULA=YES

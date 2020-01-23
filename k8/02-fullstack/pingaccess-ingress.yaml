@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pingaccess-apac-ingress
+  name: pingaccess-sso-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
@@ -18,3 +18,96 @@ spec:
         backend:
           serviceName: pingaccess
           servicePort: 443
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-bankapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: bankapp.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingaccess
+          servicePort: 443
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-paadmin-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: pa-admin.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingaccess
+          servicePort: 9000
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-pfadmin-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: pf-admin.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingfederate
+          servicePort: 9999
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-papadmin-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: pap-admin.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingdatagovernancepap
+          servicePort: 443
+

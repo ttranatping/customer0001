@@ -31,3 +31,5 @@ kustomize build 04-clustered-pingaccess | kubectl apply  -f -
 
 
 
+Ingress:
+k apply -f pingaccess-ingress.yaml

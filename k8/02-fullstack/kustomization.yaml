@@ -65,6 +65,19 @@ patches:
         - name: init
           image: curlimages/curl:latest
           command: ['sh', '-c', 'until curl --connect-timeout 1 --silent -k https://pingfederate/pf/heartbeat.ping ; do echo waiting for pf heartbeat ; sleep 2 ; done']
-
+- target:
+    kind: Service
+    name: ^pingdatagovernancepap$
+  patch: |-
+    - op: replace
+      path: /spec/ports/0/port
+      value: 443
+- target:
+    kind: Deployment
+    name: ^pingdatagovernancepap$
+  patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/ports/0
+      value: { containerPort: 443 }
 
 

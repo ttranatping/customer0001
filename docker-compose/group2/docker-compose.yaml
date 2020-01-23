@@ -57,7 +57,7 @@ services:
     #  - ${HOME}/projects/devops/volumes/full-stack.pingfederate:/opt/out
     #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingfederate:/opt/in
     ports:
-      - 443:9031
+      - 9031:9031
       - 9999:9999
     networks:
       - pingnet-dmz

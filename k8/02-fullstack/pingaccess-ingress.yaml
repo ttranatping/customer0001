@@ -10,7 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: sso.pingapac.com
+  - host: sso-nab.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -33,7 +33,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: bankapp.pingapac.com
+  - host: bankapp-nab.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -56,7 +56,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: pa-admin.pingapac.com
+  - host: pa-admin-nab.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -79,7 +79,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: pf-admin.pingapac.com
+  - host: pf-admin-nab.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -102,7 +102,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: pap-admin.pingapac.com
+  - host: pap-admin-nab.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.

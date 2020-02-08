@@ -3,6 +3,6 @@
     <con:list name="domain-names">
         <con:ListItem>pingfederate</con:ListItem>
         <con:ListItem>localhost</con:ListItem>
-        <con:ListItem>sso.pingapac.com</con:ListItem>
+        <con:ListItem>sso-0001.pingapac.com</con:ListItem>
     </con:list>
 </con:config>

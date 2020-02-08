@@ -21,7 +21,7 @@
                 <meta http-equiv="pragma" content="no-cache" />
 
                 <script type="text/javascript">
-var apiBaseUrl = "https://bankapp.pingapac.com";
+var apiBaseUrl = "https://bankapp-0001.pingapac.com";
 
 var idx = 0;
 

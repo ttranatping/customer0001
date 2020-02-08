@@ -3,4 +3,5 @@ SERVER_PROFILE_PATH=group2/pingdirectory
 SERVER_PROFILE_PARENT=PD
 SERVER_PROFILE_PD_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
 SERVER_PROFILE_PD_PATH=baseline/pingdirectory
+
 PING_IDENTITY_ACCEPT_EULA=YES

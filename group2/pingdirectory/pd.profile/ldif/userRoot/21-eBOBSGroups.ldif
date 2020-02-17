@@ -31,7 +31,7 @@ member: uid=user.1,ou=people,${USER_BASE_DN}
 dn: cn=group.2,ou=groups,ou=eBOBS,${USER_BASE_DN}
 objectClass: top
 objectClass: groupOfNames
-cn: group.1
+cn: group.2
 o: OC005
 o: OC006
 o: OC007
@@ -41,7 +41,7 @@ member: uid=user.1,ou=people,${USER_BASE_DN}
 dn: cn=group.3,ou=groups,ou=eBOBS,${USER_BASE_DN}
 objectClass: top
 objectClass: groupOfNames
-cn: group.1
+cn: group.3
 o: OC001
 o: OC003
 o: OC005

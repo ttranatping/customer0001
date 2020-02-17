@@ -17,7 +17,6 @@ o: OC002
 o: OC003
 o: OC004
 member: uid=user.0,ou=people,${USER_BASE_DN}
-cn: group.0
 
 dn: cn=group.1,ou=groups,ou=eBOBS,${USER_BASE_DN}
 objectClass: top
@@ -28,7 +27,6 @@ o: OC004
 o: OC005
 o: OC006
 member: uid=user.1,ou=people,${USER_BASE_DN}
-cn: group.1
 
 dn: cn=group.2,ou=groups,ou=eBOBS,${USER_BASE_DN}
 objectClass: top
@@ -39,7 +37,6 @@ o: OC006
 o: OC007
 o: OC008
 member: uid=user.1,ou=people,${USER_BASE_DN}
-cn: group.2
 
 dn: cn=group.3,ou=groups,ou=eBOBS,${USER_BASE_DN}
 objectClass: top
@@ -50,4 +47,3 @@ o: OC003
 o: OC005
 o: OC007
 member: uid=user.1,ou=people,${USER_BASE_DN}
-cn: group.3

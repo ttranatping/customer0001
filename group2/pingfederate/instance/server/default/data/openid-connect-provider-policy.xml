@@ -42,6 +42,26 @@
     </urn:ProviderPolicyGroup>
     <urn:ProviderPolicyGroup policyId="pingaccess" idTokenLife="5" includeSriInIdToken="true" includeUserInfoInIdToken="true" includeSHashInIdToken="false" returnIdTokenOnRefreshGrant="false" policyName="pingaccess" accessTokenManagerId="jwt">
         <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="object_codes" Type="Expression" Value="#ldapID=&quot;LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3&quot;, 
+#ldapReturnAttributes=&quot;o&quot;.split(&quot;x&quot;), 
+#ldapBase=&quot;ou=groups,ou=eBOBS,dc=example,dc=com&quot;, 
+#uid = #this.get(&quot;uid&quot;).toString(),
+#ldapSearchFilter=&quot;(&amp;(member=uid=&quot; + #uid + &quot;,ou=people,dc=example,dc=com)(o=*))&quot;, 
+#dataSourceManager = @org.sourceid.saml20.domain.mgmt.MgmtFactory@getDataSourceManager(), 
+#ldapDataSource = #dataSourceManager.getLdapDataSource(#ldapID), 
+#ldapResult = #ldapDataSource.getAttributesOfMatchingObjects(ldapBase,ldapSearchFilter,2,ldapReturnAttributes,0), 
+#i=0, 
+#result = new java.util.HashSet(), 
+#ldapResult.{ 
+  #objectCodeList = #ldapResult[#i].get(&quot;o&quot;).getValuesAsCollection(),
+  #j = 0,
+  #objectCodeList.{
+    #result.add(#objectCodeList[#j]),
+    #j=#j+1
+  },
+  #i=#i+1 
+}, 
+new org.sourceid.saml20.adapter.attribute.AttributeValue(#result) " xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="sub" Type="Token" Value="Username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         </urn:UserInfoMapping>

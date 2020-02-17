@@ -1,0 +1,47 @@
+dn: ou=eBOBS,${USER_BASE_DN}
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=groups,ou=eBOBS,${USER_BASE_DN}
+objectClass: top
+objectClass: organizationalUnit
+
+dn: cn=group.0,ou=groups,ou=eBOBS,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.0
+o: OC001
+o: OC002
+o: OC003
+o: OC004
+member: uid=user.0,ou=people,${USER_BASE_DN}
+
+dn: cn=group.1,ou=groups,ou=eBOBS,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.1
+o: OC003
+o: OC004
+o: OC005
+o: OC006
+member: uid=user.1,ou=people,${USER_BASE_DN}
+
+dn: cn=group.2,ou=groups,ou=eBOBS,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.1
+o: OC005
+o: OC006
+o: OC007
+o: OC008
+member: uid=user.1,ou=people,${USER_BASE_DN}
+
+dn: cn=group.3,ou=groups,ou=eBOBS,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.1
+o: OC001
+o: OC003
+o: OC005
+o: OC007
+member: uid=user.1,ou=people,${USER_BASE_DN}

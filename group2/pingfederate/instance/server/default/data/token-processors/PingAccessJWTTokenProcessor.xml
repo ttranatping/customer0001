@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:TokenProcessorConfiguration isInheritAttributeSettings="false" maskOgnlValues="false" isInheritExtendedContractAttributes="false" name="PingAccessJWTTokenProcessor" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields>
+        <urn:Field name="JWKS Endpoint URI">https://pingaccess/pa/oidc/JWKS</urn:Field>
+        <urn:Field name="Issuer">PingAccess</urn:Field>
+        <urn:Field name="Expiry Tolerance">5</urn:Field>
+    </urn:Fields>
+    <urn:AdvancedFields/>
+    <urn:Tables/>
+    <urn:ExtendedContractAttributes/>
+</urn:TokenProcessorConfiguration>

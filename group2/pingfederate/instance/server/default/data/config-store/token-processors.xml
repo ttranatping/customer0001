@@ -2,5 +2,6 @@
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
     <con:map name="token-processors">
         <con:item name="UsernameTokenProcessor">com.pingidentity.pf.tokenprocessors.username.UsernameTokenProcessor</con:item>
+        <con:item name="PingAccessJWTTokenProcessor">org.sourceid.wstrust.processor.jwt.JWTTokenProcessor</con:item>
     </con:map>
 </con:config>

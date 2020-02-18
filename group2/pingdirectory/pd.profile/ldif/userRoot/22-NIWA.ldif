@@ -12,21 +12,21 @@ dn: cn=acl-junction1-user,ou=groups,ou=NIWA,${USER_BASE_DN}
 objectClass: top
 objectClass: groupOfNames
 cn: acl-junction1-user
-o: /WebSEAL/aus/Junction1/
+o: /WebSEAL/aus/Junction1
 member: uid=user.1,ou=people,${USER_BASE_DN}
 
 dn: cn=acl-junction1-admin,ou=groups,ou=NIWA,${USER_BASE_DN}
 objectClass: top
 objectClass: groupOfNames
 cn: acl-junction1-admin
-o: /WebSEAL/aus/Junction1/admin/dashboard/
+o: /WebSEAL/aus/Junction1/admin/dashboard
 member: uid=user.1,ou=people,${USER_BASE_DN}
 
 dn: cn=acl-junction2-user,ou=groups,ou=NIWA,${USER_BASE_DN}
 objectClass: top
 objectClass: groupOfNames
 cn: acl-junction2-user
-o: /WebSEAL/aus/Junction2/
+o: /WebSEAL/aus/Junction2
 member: uid=user.0,ou=people,${USER_BASE_DN}
 member: uid=user.1,ou=people,${USER_BASE_DN}
 
@@ -34,5 +34,5 @@ dn: cn=acl-junction2-admin,ou=groups,ou=NIWA,${USER_BASE_DN}
 objectClass: top
 objectClass: groupOfNames
 cn: acl-junction2-admin
-o: /WebSEAL/aus/Junction2/admin/dashboard/
+o: /WebSEAL/aus/Junction2/admin/dashboard
 member: uid=user.0,ou=people,${USER_BASE_DN}

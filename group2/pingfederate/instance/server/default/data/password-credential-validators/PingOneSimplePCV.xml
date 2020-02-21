@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:PluginConfiguration isInheritExtendedContractAttributes="false" name="PingOne Simple PCV" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields/>
+    <urn:AdvancedFields/>
+    <urn:Tables>
+        <urn:Table name="Users">
+            <urn:Row defaultRow="false">
+                <urn:Field name="Username">joe</urn:Field>
+                <urn:Field name="Password">LQISWEkt2T4sE30erxvETmuitrw-sR5onrPJOtO1_oQ.VbYfoMTJ.2</urn:Field>
+                <urn:Field name="Confirm Password">LQISWEkt2T4sE30erxvETmuitrw-sR5onrPJOtO1_oQ.VbYfoMTJ.2</urn:Field>
+            </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="Username">sarah</urn:Field>
+                <urn:Field name="Password">p0fM6jjxyu1SvKmlrq9MjgDAayVzk0zjb0UVeVu6moo.o6Qf3fYL.2</urn:Field>
+                <urn:Field name="Confirm Password">p0fM6jjxyu1SvKmlrq9MjgDAayVzk0zjb0UVeVu6moo.o6Qf3fYL.2</urn:Field>
+            </urn:Row>
+        </urn:Table>
+    </urn:Tables>
+</urn:PluginConfiguration>

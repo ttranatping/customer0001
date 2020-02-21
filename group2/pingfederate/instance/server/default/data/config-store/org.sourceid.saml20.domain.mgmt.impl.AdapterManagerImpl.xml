@@ -3,6 +3,7 @@
     <con:map name="IdpAuthnAdapterInstances">
         <con:item name="HTMLFormPD">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
         <con:item name="pingIDSDKAdapter">com.pingidentity.adapters.pingid.PingIDSDKAdapter</con:item>
+        <con:item name="PingOneHTMLFormAdapter">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
     </con:map>
     <con:map name="IdpAdapterInstanceParents"/>
 </con:config>

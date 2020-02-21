@@ -12,6 +12,7 @@
      password to that particular key.-->
     <map name="DsigPrivateKeyPasswords">
         <item name="v8m5h9qrw85dgmndgv47k76xz">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiI5LjIuMC4xMCJ9..lnQoasV2J29-6KtVWlIWLQ.5of9PpT1aJtyrjWAX_LTz3SfghNxIFBLmU8_8tne0rU.FL732jjTyz1sTcAu9Msi2A</item>
+        <item name="90xf177s6su59n3tv4qrvh5ar">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUifQ..hZvN-7YS9-DIRkdElZzfLw.NiNWKdDRqq1SDd4og7h8Dz8jaGHU4Pf5O-X7PRx32fw.biQ29tm7hGHgUGDMJ4asMA</item>
     </map>
     <!--DSIG HSM Keystore information: name and password-->
     <item name="DsigHSMKeystoreName">ping-dsig.hsmks</item>
@@ -89,7 +90,7 @@
     <item name="TrustHSMKeystoreType2">default</item>
     <!--General keystore information: name and password-->
     <item name="GeneralKeystoreName">ping-general.jks</item>
-    <item name="GeneralKeystorePassword"/>
+    <item name="GeneralKeystorePassword">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUifQ..0VEp0n39isAxHacrnNitfw.w0SBdJGVSZzcmyGt02k-pvTr_lSeCtSe-uFo0Qd6gww.MkCK6YmkCnWLBKDIl19mlA</item>
     <!--Do not modify-->
     <item name="GeneralKeystoreType2">default</item>
     <!--Map of General keystore aliases to passwords; the system uses this map

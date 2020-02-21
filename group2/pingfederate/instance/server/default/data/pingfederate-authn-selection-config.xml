@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1579043025555" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1582254267506" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
         <urn:AuthnSelectionTree treeName="PA Step Up with PID SDK" disabled="false" authnApiApp="">
             <urn:AstRoot context="">
@@ -30,7 +30,10 @@
                                 <urn:OutboundAttributeMapping>
                                     <urn1:AttributeMap Name="mail" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="mail" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="subject" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="givenName" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="2FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="isMemberOf" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="sn" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="username" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                 </urn:OutboundAttributeMapping>
@@ -58,7 +61,10 @@
                         <urn:OutboundAttributeMapping>
                             <urn1:AttributeMap Name="mail" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="mail" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="subject" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="givenName" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="1FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="isMemberOf" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="sn" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="username" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                         </urn:OutboundAttributeMapping>

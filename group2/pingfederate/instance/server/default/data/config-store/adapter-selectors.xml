@@ -3,5 +3,6 @@
     <con:map name="adapter-selectors">
         <con:item name="paStepUpSelector">com.pingidentity.pf.selectors.saml.SamlAuthnContextAdapterSelector</con:item>
         <con:item name="mfaApplicationSelector">com.pingidentity.pf.selectors.ExtendedPropertyAuthnSelector</con:item>
+        <con:item name="compositeMFASelector">com.pingidentity.selector.CompositeSelector</con:item>
     </con:map>
 </con:config>

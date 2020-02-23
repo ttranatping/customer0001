@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:PluginConfiguration isInheritExtendedContractAttributes="false" name="Composite MFA Selector" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields/>
+    <urn:AdvancedFields/>
+    <urn:Tables>
+        <urn:Table name="Must Match List"/>
+        <urn:Table name="Any Match List">
+            <urn:Row defaultRow="false">
+                <urn:Field name="Selector Instance ID">mfaApplicationSelector</urn:Field>
+                <urn:Field name="Expected Result">true</urn:Field>
+                <urn:Field name="Negate Result">false</urn:Field>
+            </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="Selector Instance ID">paStepUpSelector</urn:Field>
+                <urn:Field name="Expected Result">2FA</urn:Field>
+                <urn:Field name="Negate Result">false</urn:Field>
+            </urn:Row>
+        </urn:Table>
+    </urn:Tables>
+    <urn:ExtendedContractAttributes/>
+</urn:PluginConfiguration>

@@ -9,6 +9,7 @@
                 <urn:EncryptionPolicy EncryptionAlgorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" KeyTransportAlgorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p" EncryptAssertion="false" EncryptSubjectNameID="false" SLOEncryptSubjectNameID="false"/>
                 <urn:DecryptionPolicy AssertionEncrypted="false" SubjectNameIDEncrypted="false" AttributeEncrypted="false" SLOSubjectNameIDEncrypted="false"/>
             </urn:Encryption>
+            <urn:ConnectionTemplateProperties/>
             <urn:MetadataUrlId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <urn:enableAutoMetadataUpdate>false</urn:enableAutoMetadataUpdate>
             <urn:AdditionalAllowedEntitiesConfiguration>
@@ -20,7 +21,7 @@
     </md:Extensions>
     <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="true" WantAssertionsSigned="false" SignResponseAsRequired="true">
         <md:Extensions>
-            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2020-02-21T02:29:54.139Z">
+            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2020-02-21T06:04:05.459Z">
                 <urn:IncomingBindings Artifact="false" POST="true" Redirect="true" SOAP="false"/>
                 <urn:EnabledProfiles IDPInitiatedSSO="true" IDPInitiatedSLO="true" SPInitiatedSSO="true" SPInitiatedSLO="true"/>
                 <urn:SP AssertionValidityAfterMinutes="5" AssertionValidityBeforeMinutes="5" ConnectionTargetType="Standard" EnableCDCDuringSSO="false">
@@ -29,7 +30,7 @@
                             <urn:AttributeMap Name="fname" Type="Authentication Policy Contract" Value="givenName"/>
                             <urn:AttributeMap Name="lname" Type="Authentication Policy Contract" Value="sn"/>
                             <urn:AttributeMap Name="memberOf" Type="Authentication Policy Contract" Value="isMemberOf"/>
-                            <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="subject"/>
+                            <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="username"/>
                             <urn:AttributeMap Name="email" Type="Authentication Policy Contract" Value="mail"/>
                             <urn:TokenAuthorizationIssuanceCriteria/>
                         </urn:DefaultAttributeMapping>

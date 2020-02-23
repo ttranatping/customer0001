@@ -12,6 +12,7 @@ kubectl port-forward svc/pingfederate 9999:9999
 kubectl port-forward svc/pingaccess 9000:9000
 sudo kubectl port-forward svc/pingaccess 443:443
 sudo kubectl port-forward svc/pingdirectory 389:389
+kubectl port-forward svc/passwordapi 8083:8083
 
 Clean environment:
 kubectl delete -R -f 07-clusteredpingfederate

@@ -32,7 +32,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: demo1-0002.pingapac.com
+  - host: demo2-0001.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -54,7 +54,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: demo1-0003.pingapac.com
+  - host: demo3-0001.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -76,7 +76,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: demo1-0004.pingapac.com
+  - host: demo4-0001.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -98,7 +98,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: demo1-0005.pingapac.com
+  - host: demo5-0001.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.
@@ -120,7 +120,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   rules:
-  - host: demo1-0006.pingapac.com
+  - host: demo6-0001.pingapac.com
     http:
       paths:
       # This rule gives internal access to the pingaccess admin services.

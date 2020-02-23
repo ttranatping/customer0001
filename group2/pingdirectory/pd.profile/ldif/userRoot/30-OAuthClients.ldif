@@ -7,7 +7,7 @@ pf-oauth-client-bypass-approval-page: TRUE
 pf-oauth-client-enforce-replay-prevention: FALSE
 pf-oauth-client-grant-type: authorization_code
 pf-oauth-client-hashed-secret: 42aKDBLq8IeRenYb-qeH_V66mxPBW-KJG_39iWlvLWk.zBipcvqh.2
-pf-oauth-client-last-modified: 1582253777808
+pf-oauth-client-last-modified: 1581995553891
 pf-oauth-client-name: niwa
 pf-oauth-client-persistent-grant-exp-type: SERVER_DEFAULT
 pf-oauth-client-redirect-uri: https://demo5-0001.pingapac.com/*
@@ -33,7 +33,6 @@ pf-oauth-client-supplemental-info: 23:USER_AUTHZ_URL_OVERRIDE:null
 pf-oauth-client-supplemental-info: 30:PENDING_AUTHZ_TIMEOUT_OVERRIDE:null
 pf-oauth-client-supplemental-info: 24:vnd.ping.policy_group_id:niwaOIDC
 pf-oauth-client-supplemental-info: 37:TOKEN_ENDPOINT_AUTH_SIGNING_ALGORITHM:null
-pf-oauth-client-supplemental-info: 21:pf_ecm_require_mfa_00:true
 pf-oauth-client-supplemental-info: 28:id_token_signed_response_alg:null
 
 

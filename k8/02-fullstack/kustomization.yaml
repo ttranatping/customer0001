@@ -8,6 +8,7 @@ resources:
 - ../01-standalone/pingdatagovernance
 - ../01-standalone/pingdatagovernancepap
 - ../08-bankapi
+- ../09-passwordapi
 
 # The only difference in standalone deployments vs "fullstack" (integrated) is the product configurations. 
 # here we replace standalone server-profiles ("getting-started") with "baseline" for each product

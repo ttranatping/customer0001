@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1582254267506" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1582255201388" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
-        <urn:AuthnSelectionTree treeName="PA Step Up with PID SDK" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="MFA Authentication" disabled="false" authnApiApp="">
             <urn:AstRoot context="">
-                <urn:AstAction authnSelectorId="paStepUpSelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-                <urn:AstChild context="2FA">
+                <urn:AstAction authnSelectorId="compositeMFASelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="FAIL">
+                    <urn:AstAction noOpType="CONTINUE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="PASS">
                     <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                         <urn:AuthnSourceKey type="ADAPTER">HTMLFormPD</urn:AuthnSourceKey>
                         <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
@@ -14,7 +17,7 @@
                     </urn:AstChild>
                     <urn:AstChild context="Success">
                         <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <urn:AuthnSourceKey type="ADAPTER">pingIDSDKAdapter</urn:AuthnSourceKey>
+                            <urn:AuthnSourceKey type="ADAPTER">pingIDAdapter</urn:AuthnSourceKey>
                             <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
                             <urn:InputIdMapping Type="Adapter" AttributeSourceId="HTMLFormPD" Value="username"/>
                         </urn:AstAction>
@@ -33,7 +36,7 @@
                                     <urn1:AttributeMap Name="givenName" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="2FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="isMemberOf" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-                                    <urn1:AttributeMap Name="sn" Type="Adapter" AttributeSourceId="HTMLFormPD" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="sn" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:AttributeMap Name="username" Type="Local Account" AttributeSourceId="RBSQIwi5KWYN9ZGK" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                     <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                                 </urn:OutboundAttributeMapping>

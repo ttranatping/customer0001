@@ -5,13 +5,13 @@
         <urn:Field name="Session State">None</urn:Field>
         <urn:Field name="Session Timeout">60</urn:Field>
         <urn:Field name="Session Max Timeout">480</urn:Field>
-        <urn:Field name="Allow Password Changes">false</urn:Field>
+        <urn:Field name="Allow Password Changes">true</urn:Field>
         <urn:Field name="Password Management System"/>
         <urn:Field name="Enable 'Remember My Username'">false</urn:Field>
         <urn:Field name="Enable 'This is My Device'">false</urn:Field>
         <urn:Field name="Change Password Email Notification">false</urn:Field>
         <urn:Field name="Show Password Expiring Warning">false</urn:Field>
-        <urn:Field name="Password Reset Type">NONE</urn:Field>
+        <urn:Field name="Password Reset Type">PingID</urn:Field>
         <urn:Field name="Password Reset Policy Contract"/>
         <urn:Field name="Account Unlock">false</urn:Field>
         <urn:Field name="Local Identity Profile">RBSQIwi5KWYN9ZGK</urn:Field>
@@ -42,15 +42,15 @@
         <urn:Field name="Account Unlock Template">account-unlock.html</urn:Field>
         <urn:Field name="OTP Length">8</urn:Field>
         <urn:Field name="OTP Time to Live">10</urn:Field>
-        <urn:Field name="PingID Properties"/>
+        <urn:Field name="PingID Properties">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUiLCJ6aXAiOiJERUYifQ..RcmCf9NGfZAaCH7OPwGOzw.50XeEBWTJybPCJbrZBE45cpBQihgEF4PSJdnjv0mktFdZGf0_Wab4RRulbAxMM9SwfkuuJjgBBHIGePgaiWxl0nN5rsaTUUVMUYiie5dkcZyzemkIQCi5mgQjIB8-ZHXaKcA-zi7kgSylNpEJgNN9wdYkEHj4AO9NPL5cTiK9LZgOZ_zg5zl_yf9n-Vv_VpbekmtO-V1yPFXg8OlTCcm_d0--N1_--sgK7MY_fhsVdUceCMnO9jek6YhBfiPxU6joNmgobyFOlJCtyvD7IIAXgcxWyjCNY4bsISodYxYt-9DDCndOXYC941EMqxcW-TaGld-oA5BBdjEhNtkso11TGau--N-Jt8-j3mWTsyi6qq1DEEgo8l6sqpXQDPNtvsPmEQdAQFTELx-VGSX7vkpLiUOcdkMRf3X804BYmMvqK8.Rp6-6mge_RsSQzQj7Ry4FA</urn:Field>
         <urn:Field name="Require Verified Email">false</urn:Field>
         <urn:Field name="Username Recovery Template">username.recovery.template.html</urn:Field>
         <urn:Field name="Username Recovery Info Template">username.recovery.info.template.html</urn:Field>
         <urn:Field name="Username Recovery Email Template">message-template-username-recovery.html</urn:Field>
-        <urn:Field name="CAPTCHA for Authentication">false</urn:Field>
-        <urn:Field name="CAPTCHA for Password change">false</urn:Field>
-        <urn:Field name="CAPTCHA for Password Reset">false</urn:Field>
-        <urn:Field name="CAPTCHA for Username recovery">false</urn:Field>
+        <urn:Field name="CAPTCHA for Authentication">true</urn:Field>
+        <urn:Field name="CAPTCHA for Password change">true</urn:Field>
+        <urn:Field name="CAPTCHA for Password Reset">true</urn:Field>
+        <urn:Field name="CAPTCHA for Username recovery">true</urn:Field>
     </urn:Fields>
     <urn:AdvancedFields>
         <urn:Field name="Login Template">html.form.login.template.html</urn:Field>
@@ -78,15 +78,15 @@
         <urn:Field name="Account Unlock Template">account-unlock.html</urn:Field>
         <urn:Field name="OTP Length">8</urn:Field>
         <urn:Field name="OTP Time to Live">10</urn:Field>
-        <urn:Field name="PingID Properties"/>
+        <urn:Field name="PingID Properties">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUiLCJ6aXAiOiJERUYifQ..RcmCf9NGfZAaCH7OPwGOzw.50XeEBWTJybPCJbrZBE45cpBQihgEF4PSJdnjv0mktFdZGf0_Wab4RRulbAxMM9SwfkuuJjgBBHIGePgaiWxl0nN5rsaTUUVMUYiie5dkcZyzemkIQCi5mgQjIB8-ZHXaKcA-zi7kgSylNpEJgNN9wdYkEHj4AO9NPL5cTiK9LZgOZ_zg5zl_yf9n-Vv_VpbekmtO-V1yPFXg8OlTCcm_d0--N1_--sgK7MY_fhsVdUceCMnO9jek6YhBfiPxU6joNmgobyFOlJCtyvD7IIAXgcxWyjCNY4bsISodYxYt-9DDCndOXYC941EMqxcW-TaGld-oA5BBdjEhNtkso11TGau--N-Jt8-j3mWTsyi6qq1DEEgo8l6sqpXQDPNtvsPmEQdAQFTELx-VGSX7vkpLiUOcdkMRf3X804BYmMvqK8.Rp6-6mge_RsSQzQj7Ry4FA</urn:Field>
         <urn:Field name="Require Verified Email">false</urn:Field>
         <urn:Field name="Username Recovery Template">username.recovery.template.html</urn:Field>
         <urn:Field name="Username Recovery Info Template">username.recovery.info.template.html</urn:Field>
         <urn:Field name="Username Recovery Email Template">message-template-username-recovery.html</urn:Field>
-        <urn:Field name="CAPTCHA for Authentication">false</urn:Field>
-        <urn:Field name="CAPTCHA for Password change">false</urn:Field>
-        <urn:Field name="CAPTCHA for Password Reset">false</urn:Field>
-        <urn:Field name="CAPTCHA for Username recovery">false</urn:Field>
+        <urn:Field name="CAPTCHA for Authentication">true</urn:Field>
+        <urn:Field name="CAPTCHA for Password change">true</urn:Field>
+        <urn:Field name="CAPTCHA for Password Reset">true</urn:Field>
+        <urn:Field name="CAPTCHA for Username recovery">true</urn:Field>
     </urn:AdvancedFields>
     <urn:Tables>
         <urn:Table name="Credential Validators">
@@ -100,6 +100,7 @@
         <urn:AttributeName>givenName</urn:AttributeName>
         <urn:AttributeName>mobile</urn:AttributeName>
         <urn:AttributeName>isMemberOf</urn:AttributeName>
+        <urn:AttributeName>DN</urn:AttributeName>
         <urn:AttributeName>sn</urn:AttributeName>
     </urn:ExtendedContractAttributes>
     <urn:UniqueKeyField>username</urn:UniqueKeyField>
@@ -108,9 +109,16 @@
         <urn1:AttributeMap Name="policy.action" Type="Adapter" Value="policy.action" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="givenName" Type="Adapter" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="mobile" Type="Text" Value="12345678910" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-        <urn1:AttributeMap Name="isMemberOf" Type="Adapter" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="DN" Type="Adapter" Value="DN" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="isMemberOf" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="sn" Type="Adapter" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="username" Type="Adapter" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:Parameter Name="filter" Value="entryUUID=${entryUUID}"/>
+            <urn1:Parameter Name="search_base" Value="dc=example,dc=com"/>
+            <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+            <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+        </urn1:AttributeSource>
         <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
     </urn:AttributeMapping>
 </urn:AdapterConfiguration>

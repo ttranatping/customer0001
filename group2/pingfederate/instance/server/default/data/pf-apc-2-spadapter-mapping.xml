@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:Source2TargetPluginMappings xmlns:urn="urn:pingidentity.com:pf:src2tgt">
+    <urn:Source2TargetPluginMapping sourcePluginId="G9RvwVCMTHY5gVVi" targetPluginId="spadapter" countForLicense="true" defaultTargetResource="https://demo6-0001.pingapac.com/AgentlessSPSample/app">
+        <urn:AttributeMapping>
+            <urn1:AttributeMap Name="firstName" Type="Authentication Policy Contract" Value="firstName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="lastName" Type="Authentication Policy Contract" Value="lastName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="subject" Type="Authentication Policy Contract" Value="subject" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="groups" Type="Authentication Policy Contract" Value="groups" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="status" Type="Text" Value="Active" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        </urn:AttributeMapping>
+    </urn:Source2TargetPluginMapping>
+</urn:Source2TargetPluginMappings>

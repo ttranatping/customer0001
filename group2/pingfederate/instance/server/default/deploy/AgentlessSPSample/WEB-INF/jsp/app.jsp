@@ -202,22 +202,6 @@
 									  readonly><%= attributes %></textarea>
 						   </div>
 					</div>
-					<div class="bottom-button-container" style="padding-top:30px">
-						<form method="POST" 
-							  action="<%= URLUtil.getStartSLOURL(basePfUrl, 
-									  							 SpSampleConstants.START_SP_SLO_ENDPOINT, 
-									  							 URLUtil.getLoggedOutURL(request))%>">
-							<input class="table-button" 
-								   id="slo_button" 
-								   name="slo_button" 
-								   type="submit" 
-								   value="Single Logout"/>
-						</form>
-					</div>
-					<div class="ping-link-fragment"><%= SpSampleConstants.START_SP_SLO_ENDPOINT %></div>
-					<div class="start-over-link-container">
-						<a href=<%= URLUtil.getIdpSampleAppURL(request) %>><%= "< Start Over" %></a>
-					</div>
 <%              			
 	}
 	else 

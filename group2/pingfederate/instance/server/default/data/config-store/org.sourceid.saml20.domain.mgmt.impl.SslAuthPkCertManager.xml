@@ -4,4 +4,6 @@
     <con:map name="https://httpbin.org"/>
     <con:map name="http://pingone.com/844fd6c9-377a-4e82-8497-7b4fd41f5e69"/>
     <con:map name="PingConnect"/>
+    <con:map name="docker-ref"/>
+    <con:map name="internal-saml-app"/>
 </con:config>

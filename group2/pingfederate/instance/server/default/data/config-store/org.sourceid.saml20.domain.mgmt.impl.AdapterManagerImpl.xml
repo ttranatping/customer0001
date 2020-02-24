@@ -5,4 +5,7 @@
         <con:item name="pingIDAdapter">com.pingidentity.adapters.pingid.PingIDAdapter</con:item>
     </con:map>
     <con:map name="IdpAdapterInstanceParents"/>
+    <con:map name="SpAuthnAdapterInstances">
+        <con:item name="spadapter">com.pingidentity.pf.adapters.referenceid.SpBackchannelReferenceAuthnAdapter</con:item>
+    </con:map>
 </con:config>

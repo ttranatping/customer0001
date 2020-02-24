@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor entityID="internal-saml-app" urn:name="PingFederate IdP" ID="IKC7q22q897dx4j9sEMLoE8fWOj" urn:baseUrl="https://sso-0001.pingapac.com" urn:LogLevel="STANDARD" urn:isActive="true" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:urn="urn:sourceid.org:saml2:metadata-extension:v2">
+    <md:Extensions>
+        <urn:EntityExtension PFVersion="10.0.0.15" LicenseGroup="">
+            <urn:VirtualIdentity EntityID="internal-saml-app"/>
+            <urn:DefaultVirtualIdentity EntityID="internal-saml-app"/>
+            <urn:DigitialSignatureAliases SigningKeyAlias="v8m5h9qrw85dgmndgv47k76xz" includeX509inXmlSig="true" includeRawKeyInXmlSig="true" SigningAlgorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256">
+                <urn:ActiveVerificationCertAlias>ordbo9wddi6z6yeqkfqvcdmqy</urn:ActiveVerificationCertAlias>
+            </urn:DigitialSignatureAliases>
+            <urn:Encryption>
+                <urn:EncryptionPolicy EncryptionAlgorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" KeyTransportAlgorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p" EncryptAssertion="false" EncryptSubjectNameID="false" SLOEncryptSubjectNameID="false"/>
+                <urn:DecryptionPolicy AssertionEncrypted="false" SubjectNameIDEncrypted="false" AttributeEncrypted="false" SLOSubjectNameIDEncrypted="false"/>
+            </urn:Encryption>
+            <urn:ConnectionTemplateProperties/>
+            <urn:MetadataUrlId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <urn:enableAutoMetadataUpdate>false</urn:enableAutoMetadataUpdate>
+            <urn:AdditionalAllowedEntitiesConfiguration>
+                <urn:AllowAdditionalEntities>false</urn:AllowAdditionalEntities>
+                <urn:AllowAllEntities>false</urn:AllowAllEntities>
+                <urn:AdditionalAllowedEntities/>
+            </urn:AdditionalAllowedEntitiesConfiguration>
+            <urn:ExtendedProperties name="require_mfa" value="true"/>
+        </urn:EntityExtension>
+    </md:Extensions>
+    <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" WantAuthnRequestsSigned="false">
+        <md:Extensions>
+            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2020-02-24T04:08:56.922Z">
+                <urn:IncomingBindings Artifact="false" POST="true" Redirect="true" SOAP="false"/>
+                <urn:EnabledProfiles IDPInitiatedSSO="true" IDPInitiatedSLO="true" SPInitiatedSSO="true" SPInitiatedSLO="true"/>
+                <urn:IDP AssertionsSigned="false" DefaultTargetResource="https://demo6-0001.pingapac.com/AgentlessSPSample/app">
+                    <urn:AccountLinkingAndMapping Type="mapping" IncludeAdditionalAttributes="false"/>
+                    <urn:ErrPageMsg>errorDetail.spSsoFailure</urn:ErrPageMsg>
+                </urn:IDP>
+            </urn:RoleExtension>
+        </md:Extensions>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="/idp/SLO.saml2"/>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="/idp/SLO.saml2"/>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="/idp/SSO.saml2"/>
+        <saml:Attribute Name="firstName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="lastName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="groups" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+    </md:IDPSSODescriptor>
+    <md:RoleDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" xsi:type="urn:PFAvailableCertsRoleDescriptorType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <urn:availableCert>
+            <urn:Base64EncodedCert>MIIDSjCCAjKgAwIBAgIGAWiSc9pDMA0GCSqGSIb3DQEBCwUAMGYxCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDTzEPMA0GA1UEBxMGRGVudmVyMQ0wCwYDVQQKEwRQaW5nMQwwCgYDVQQLEwNEZXYxHDAaBgNVBAMTE0NvbmZpZyBTaWduaW5nIENlcnQwHhcNMTkwMTI4MDMxNDUyWhcNMzQwMTI0MDMxNDUyWjBmMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ08xDzANBgNVBAcTBkRlbnZlcjENMAsGA1UEChMEUGluZzEMMAoGA1UECxMDRGV2MRwwGgYDVQQDExNDb25maWcgU2lnbmluZyBDZXJ0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArAVRkqw28AdAxAFGYGB/9I2ufb2t1FX7476niunwGCbCnpuLr998AVQ0SlA2TcQ/k3CSjLvpWpO3G4FpeyE/z/q2RZz/uK2ojX63Th90w7N3vvu7V2jIj/YpYvmWXO7xA6CgSEJfeoMJtt/1OolyzR8Cef1o6AOxN+VskpUJCDu4RiqmRUoF22KqXZuLU7MtZd7XN+TbpuJkA0yiqoqAuzvV1vMYCY7L0T+iosONxMKtY05N9mMoj5AAJqixRk3acCb8S2UzGTcrzyKG6t6DSuJIsTgHysgaOaB9bGLEpCI8rUJ/XdeKvLILOo1C5NsBJQ4NPhtEJ4dX8nhRqWg+VwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCPIZyGpDai+VljSka31hwcnw2l/CVrUIb94nWEooFO/OQS6oUkUIqtKMN11kVn8c4rNhn5felCo747VS5fLQvHTY9p+qtghHcyPD7X5YZL6MU2vqPInls9I5ACFmA9pZpB4bMLjvWcQvc5xYq3FRQtCUvnQLhVvSyRq+Uky5lZ95i3RQ3iVWipCPLI0qZlmmy1pbmsEcu+/eEEoFnRQZo6n4AQhZLV0yjzcx3qEuszXMwuVXj/YpFW43RcTmt0xVa4laCmEUo9ENpe2GPbvOKKw17Xx8JhGccj24JmR7npi8lCU4uflLKtSQAFMDIsM283F1wVExFxuLzbQuj5FntY</urn:Base64EncodedCert>
+            <urn:alias>ordbo9wddi6z6yeqkfqvcdmqy</urn:alias>
+        </urn:availableCert>
+        <urn:availableCert>
+            <urn:Base64EncodedCert>MIIFbzCCA1egAwIBAgIJAMX5Brtrw09cMA0GCSqGSIb3DQEBCwUAMHcxCzAJBgNVBAYTAkFVMQwwCgYDVQQIEwNWSUMxEjAQBgNVBAcTCU1lbGJvdXJuZTENMAsGA1UEChMEQVBBQzEVMBMGA1UECxMMcGluZ2FwYWMuY29tMSAwHgYDVQQDExdwa2ktZGF0YTYxLnBpbmdhcGFjLmNvbTAeFw0xOTA0MTIwMTAzMjVaFw0yMDA0MTEwMTAzMjVaMHcxCzAJBgNVBAYTAkFVMQwwCgYDVQQIEwNWSUMxEjAQBgNVBAcTCU1lbGJvdXJuZTENMAsGA1UEChMEQVBBQzEVMBMGA1UECxMMcGluZ2FwYWMuY29tMSAwHgYDVQQDExdwa2ktZGF0YTYxLnBpbmdhcGFjLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAMpQvdA+VJT3t6/AmYqI4q1vADPJCKuJ8VkgsBmXGlEJM0qWggP2sKpWeajNH8qaKwn9ucUjMileboVMBt6aQ3qsfFu49Pm72Kn+UCmXdF7XGwHVDAPPqUKhZ77bj+VSHe2+nK0539Jki5Lpl0/NyMYGb6HCx0fr4Fd/Fm7macgNUmknfIdZfJCvklAOSEYZG9cKvYi3NfWbGX0q0VG2EIh6gOFBEs4Nqp8Ph7Pq+zMMXe5vRYtgwkNnfjarL0vcRpht0GerK1UlKhaRDDzG2/OGLjp8Ft3PjpDHCrvw+p19uSZVbmkE3Up3hu65I51g0x9x/BRZIRQcLU0WGTN+t/geueDr9uIhxIvOSEmXcGp/OQMxb+2o8tlxREhx/HJddqme/2bD+K5r3OnlEeTJfOvJ/2zMptwukEn78Vcngi+FxYbkuF50P2cfLRSyHFhwqLO3EJYgY4Ke1uryqrI7jLUgM524D9Zz13glWQ3TE7Ly30ePBXwCasoDsripNGpNk1eSU4Rma7wN1cjCpPQpZJEdfhCpRom9hxfYXRqS5mVxHGtSPt7Cbg9pUIDsGMf82ErWLkWyjQerjKXLEyDr+BlZvmuIrTDc1Vh0IKbAzTLFn+2/uLp0ev6Y85G31CcS/6MqxMiGCJ2djSzO5+VJmrtmGfFHJHIFgJb3UhWxpjB3AgMBAAEwDQYJKoZIhvcNAQELBQADggIBAMVJrhthhB9VfW+O0WLfJKwSk9MN0Pz8lKmdp5t9mfpXPCLLv9nM7PBiKcxS0T3+TBUaK4jV3vof00jLweNLCoY4whV7ElPUWT0+AM7fXvb/enHz1MeT1xulzK8FQJRGcbge0FJlLbY2Ch57Op/i+PhHJitMH9GFVEk0d68w9UwHYBZT/sZGXliznjBWmSBZNb51olcAIYqJvQdlxufbLRWcuFzpkPj6BEUot3jy+c9sxdrv0wlPFjQiovNTgXQtQVt6C3xGeV0wtK/kLIkPFrnrvqISMdpUqDPoJCxhsi3DoPTvh49K8MjNHuqsuQGpyHZxvtJHjGQGF05xu48gzKWsr9dUuuz2r+V9wFvnwGP12LJj6AbAoHOivJDtXZOliNL4G/AFBT73nwVsDtMhJiiMHuYA6GIOYDAvHxa5k28FfRrNyB9DtUNwM/uhwxxs4FAhFVXyi7TdbXzuyiOj6geWe/UIV8lvro4bPgVDRwOVmkvpc2DeGIi/Fcam6tsI5n0ps0dVBWDVwAAoqbFczg1YlRbBWPS8KA4x1Yaubh4r15GddimtMKdoZzDG6eltnJi1HSnVO4lj2gttrgRyUU76YbkNRd23OntSBNNH2ft/lmtt851ZnyahRJNkiUkM2m1dgluEeksFVo1ohFq4eqzv+nUriPrkDeI9zR6AV+4V</urn:Base64EncodedCert>
+            <urn:alias>qtsxvznknzj25pjosrdom9eag</urn:alias>
+        </urn:availableCert>
+    </md:RoleDescriptor>
+    <md:ContactPerson contactType="administrative"/>
+</md:EntityDescriptor>

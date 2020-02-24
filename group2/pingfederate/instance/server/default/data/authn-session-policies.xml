@@ -4,5 +4,6 @@
     <globalPolicy enableSessions="true" idleTimeoutDisplayUnit="MINUTES" idleTimeoutMins="60" maxTimeoutDisplayUnit="MINUTES" maxTimeoutMins="480" persistentSessions="false"/>
     <sourcePolicies>
         <policy authnContextSensitive="false" authnSourceId="pingIDAdapter" authnSourceType="ADAPTER" enableSessions="false" id="gdmeJ6jpF6YGJ5AxDOvcGhBO1" persistent="false" timeoutDisplayUnit="MINUTES"/>
+        <policy authnContextSensitive="false" authnSourceId="IKC7q22q897dx4j9sEMLoE8fWOj" authnSourceType="IDP_CONN" enableSessions="false" id="xBwniDCAxodFXqPJUR6hMx8GK" persistent="false" timeoutDisplayUnit="MINUTES"/>
     </sourcePolicies>
 </authnSessionPolicies>

@@ -50,12 +50,22 @@ patches:
       path: /spec/ports/1/targetPort
       value: 9031
 - target:
+    kind: Service
+    name: ^pingfederate$
+  patch: |-
+    - op: add
+      path: /spec/ports/-
+      value: {"port":9032, "name": "pf-mtls-runtime", "targetPort": 9032}
+- target:
     kind: Deployment
     name: ^pingfederate$
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/image
       value: pingidentity/pingfederate:1912-centos-10.0.0
+    - op: add
+      path: /spec/template/spec/containers/0/ports/-
+      value: {"containerPort":9032}
 - target:
     kind: Deployment
     name: ^pingaccess$

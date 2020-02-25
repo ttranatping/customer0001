@@ -35,9 +35,30 @@
 				while (httpHeaderEnum.hasMoreElements()) {
 					String httpHeaderName = (String) httpHeaderEnum.nextElement();
 					String httpHeaderValue = request.getHeader(httpHeaderName);
+					
+					if(httpHeaderName.equalsIgnoreCase("X-ACLLIST"))
+					{
+				%>
+					<p><span style="font-weight:bold; color: green;"><%= httpHeaderName %></span>: <p><span style="font-weight:bold; color: green;">
+				<%
+						String [] headerValues = httpHeaderValue.split(",");
+						
+						for(String headerValue : headerValues)
+						{
+				%>
+						<a href="<%= headerValue %>"><%= headerValue %></a>,
+				<%
+						}
+				%>
+					</p>
+				<%
+					}
+					else
+					{
 				%>
 					<p><span style="font-weight:bold; color: green;"><%= httpHeaderName %></span>: <%= httpHeaderValue %></p>
 				<%
+					}
 				}
 				%>
 			</div>

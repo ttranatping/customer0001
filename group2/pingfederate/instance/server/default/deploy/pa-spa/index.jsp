@@ -311,7 +311,7 @@ updateBalance();
                                 <div class="row row1">
                                         <div class="col-12 centerText">
                                                 <h1>Bank App</h1>
-                                                <a href="https://idp-anz.pingapac.com/idp/startSLO.ping">Logout</a>
+                                                <a href="https://sso-0001.pingapac.com/idp/startSLO.ping">Logout</a>
                                         </div>
                                         <div class="col-12 centerText">
                                                 Hello <span id="sub"></span>,

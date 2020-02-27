@@ -1,17 +1,17 @@
 html
 {
-        background-color:#c9e3f2;
+        background-color:#f2c9c9;
 }
 
 .header
 {
 	padding-top: 15px;
-	background-color:#054263;
+	background-color:#630505;
 }
 
 .footer
 {
-        background-color:#054263;
+        background-color:#630505;
 }
 
 .logo
@@ -45,7 +45,7 @@ input[type="Button"],input[type="Submit"]
 
 .row2
 {
-        background-color: #c7e2f0;
+        background-color: #f0c7c7;
 }
 
 .row3
@@ -55,7 +55,7 @@ input[type="Button"],input[type="Submit"]
 
 .row4
 {
-        background-color: #51a6d3;
+        background-color: #d35151;
 	color: black;
 }
 

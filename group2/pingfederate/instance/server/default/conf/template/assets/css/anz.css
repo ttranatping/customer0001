@@ -1,42 +1,42 @@
 html
 {
-        background-color:#f2c9c9;
+        background-color:black;
 }
 
 .header
 {
-	padding-top: 15px;
-	background-color:#630505;
+        padding-top: 10px;
+        background-color:black;
 }
 
 .footer
 {
-        background-color:#630505;
+        background-color:black;
 }
 
 .logo
 {
-        width: 200px;
-        background-size: 200px;
+        width: 120px;
+        background-size: 90px;
         background-repeat: no-repeat;
-	background-color:#054263;
-	background-image:url(anz.png);
+        background-color:black;
+        background-image:url(nab.png);
 }
 
 h1
 {
-	color:#054263;
+        color:#054263;
 }
 
 input,select
 {
-        border: 1px solid #127eb8;
+        border: 1px solid #ba102c;
 }
 
 input[type="Button"],input[type="Submit"]
 {
-        background-color:#127eb8;
-	color:white;
+        background-color:#ba102c;
+        color:white;
 }
 
 .row1
@@ -45,7 +45,7 @@ input[type="Button"],input[type="Submit"]
 
 .row2
 {
-        background-color: #f0c7c7;
+        background-color: white;
 }
 
 .row3
@@ -55,12 +55,11 @@ input[type="Button"],input[type="Submit"]
 
 .row4
 {
-        background-color: #d35151;
-	color: black;
+        background-color: white;
+        color: black;
 }
 
 .row4 h3,.row4 h2, .row4 th, .row4 td
 {
         color: black;
 }
-

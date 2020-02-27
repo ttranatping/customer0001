@@ -6,4 +6,5 @@
     <con:map name="PingConnect"/>
     <con:map name="docker-ref"/>
     <con:map name="internal-saml-app"/>
+    <con:map name="https://saml.salesforce.com"/>
 </con:config>

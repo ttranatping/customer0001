@@ -56,6 +56,7 @@
             <urn1:AttributeMap Name="streetAddress" Type="Text" Value="101 Collins St" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="terminalBSB" Type="Text" Value="801-456" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="dob" Type="Text" Value="01/01/1981" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="hello" Type="Text" Value="world" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="state" Type="Text" Value="VIC" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="username" Type="Token" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">

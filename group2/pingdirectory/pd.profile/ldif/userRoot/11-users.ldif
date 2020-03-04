@@ -1,0 +1,12 @@
+dn: uid=ttran@pingapac.onmicrosoft.com,ou=People,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: pf-connected-identities
+sn: Tran
+cn: Tam Tran
+givenName: Tam
+uid: ttran@pingapac.onmicrosoft.com
+pf-connected-identity: auth-source=pf-local-identity:user-id=ttran@pingapac.onmicrosoft.com
+

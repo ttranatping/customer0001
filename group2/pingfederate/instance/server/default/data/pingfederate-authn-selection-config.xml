@@ -1,7 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1582507311184" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1583124540710" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
-        <urn:AuthnSelectionTree treeName="Internal SAML Applications" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="AAD Login - Require MFA" disabled="false" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="compositeMFASelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="FAIL">
+                    <urn:AstAction noOpType="CONTINUE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="PASS">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="IDP_CONN">jFyCGhsl_2dTxnOtdlV6B_1LRTJ</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                        <urn:attributeRule>
+                            <urn:IncomingAttr>http://schemas.microsoft.com/claims/authnmethodsreferences</urn:IncomingAttr>
+                            <urn:Operand>MULTIVALUE_CONTAINS</urn:Operand>
+                            <urn:ExpectedValue>http://schemas.microsoft.com/claims/multipleauthn</urn:ExpectedValue>
+                            <urn:Result>MFA_PERFORMED</urn:Result>
+                        </urn:attributeRule>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="MFA_PERFORMED">
+                        <urn:AstAction apcId="Zxp6N6W5PH9onACT" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AttributeMapping>
+                                <urn1:AttributeMap Name="mail" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="subject" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="givenName" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="2FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="isMemberOf" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="sn" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeMap Name="username" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                    <urn1:Parameter Name="filter" Value="uid=${idp.https://sts.windows.net/312bc45a-ddae-4f43-96f6-58d82c7c6861/.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name}"/>
+                                    <urn1:Parameter Name="search_base" Value="ou=people,dc=example,dc=com"/>
+                                    <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+                                    <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+                                </urn1:AttributeSource>
+                                <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            </urn:AttributeMapping>
+                        </urn:AstAction>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AuthnSourceKey type="ADAPTER">pingIDAdapter</urn:AuthnSourceKey>
+                            <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                            <urn:InputIdMapping Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"/>
+                        </urn:AstAction>
+                        <urn:AstChild context="Fail">
+                            <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        </urn:AstChild>
+                        <urn:AstChild context="Success">
+                            <urn:AstAction apcId="Zxp6N6W5PH9onACT" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <urn:AttributeMapping>
+                                    <urn1:AttributeMap Name="mail" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="subject" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="givenName" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="2FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="isMemberOf" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="sn" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeMap Name="username" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                    <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                        <urn1:Parameter Name="filter" Value="uid=${idp.https://sts.windows.net/312bc45a-ddae-4f43-96f6-58d82c7c6861/.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name}"/>
+                                        <urn1:Parameter Name="search_base" Value="ou=people,dc=example,dc=com"/>
+                                        <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+                                        <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+                                    </urn1:AttributeSource>
+                                    <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                </urn:AttributeMapping>
+                            </urn:AstAction>
+                        </urn:AstChild>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+        <urn:AuthnSelectionTree treeName="AAD Login" disabled="false" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <urn:AuthnSourceKey type="IDP_CONN">jFyCGhsl_2dTxnOtdlV6B_1LRTJ</urn:AuthnSourceKey>
+                    <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                </urn:AstAction>
+                <urn:AstChild context="Fail">
+                    <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                </urn:AstChild>
+                <urn:AstChild context="Success">
+                    <urn:AstAction apcId="Zxp6N6W5PH9onACT" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AttributeMapping>
+                            <urn1:AttributeMap Name="mail" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="subject" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="givenName" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="1FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="isMemberOf" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="sn" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="username" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+                                <urn1:Parameter Name="filter" Value="uid=${idp.https://sts.windows.net/312bc45a-ddae-4f43-96f6-58d82c7c6861/.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name}"/>
+                                <urn1:Parameter Name="search_base" Value="ou=people,dc=example,dc=com"/>
+                                <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+                                <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+                            </urn1:AttributeSource>
+                            <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                        </urn:AttributeMapping>
+                    </urn:AstAction>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+        <urn:AuthnSelectionTree treeName="Internal SAML Applications" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <urn:AuthnSourceKey type="IDP_CONN">IKC7q22q897dx4j9sEMLoE8fWOj</urn:AuthnSourceKey>
@@ -23,7 +127,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="MFA Authentication" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="MFA Authentication" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction authnSelectorId="compositeMFASelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <urn:AstChild context="FAIL">
@@ -68,7 +172,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="Default AuthN Policy" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="Default AuthN Policy" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <urn:AuthnSourceKey type="ADAPTER">HTMLFormPD</urn:AuthnSourceKey>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor entityID="https://sts.windows.net/312bc45a-ddae-4f43-96f6-58d82c7c6861/" urn:name="https://sts.windows.net/312bc45a-ddae-4f43-96f6-58d82c7c6861/" ID="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" urn:baseUrl="https://login.microsoftonline.com" urn:LogLevel="STANDARD" urn:isActive="true" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:urn="urn:sourceid.org:saml2:metadata-extension:v2">
+    <md:Extensions>
+        <urn:EntityExtension PFVersion="10.0.0.15" LicenseGroup="">
+            <urn:DigitialSignatureAliases SigningKeyAlias="90xf177s6su59n3tv4qrvh5ar" includeX509inXmlSig="true" includeRawKeyInXmlSig="true" SigningAlgorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256">
+                <urn:ActiveVerificationCertAlias>81yi6selofvcttwzg7cdtgysl</urn:ActiveVerificationCertAlias>
+            </urn:DigitialSignatureAliases>
+            <urn:Encryption>
+                <urn:EncryptionPolicy EncryptionAlgorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" KeyTransportAlgorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p" EncryptAssertion="false" EncryptSubjectNameID="false" SLOEncryptSubjectNameID="false"/>
+                <urn:DecryptionPolicy AssertionEncrypted="false" SubjectNameIDEncrypted="false" AttributeEncrypted="false" SLOSubjectNameIDEncrypted="false"/>
+            </urn:Encryption>
+            <urn:ConnectionTemplateProperties/>
+            <urn:MetadataUrlId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <urn:enableAutoMetadataUpdate>false</urn:enableAutoMetadataUpdate>
+            <urn:AdditionalAllowedEntitiesConfiguration>
+                <urn:AllowAdditionalEntities>false</urn:AllowAdditionalEntities>
+                <urn:AllowAllEntities>false</urn:AllowAllEntities>
+                <urn:AdditionalAllowedEntities/>
+            </urn:AdditionalAllowedEntitiesConfiguration>
+        </urn:EntityExtension>
+    </md:Extensions>
+    <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" WantAuthnRequestsSigned="false">
+        <md:Extensions>
+            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2020-03-02T01:20:29.924Z">
+                <urn:IncomingBindings Artifact="false" POST="true" Redirect="true" SOAP="false"/>
+                <urn:EnabledProfiles IDPInitiatedSSO="true" IDPInitiatedSLO="true" SPInitiatedSSO="true" SPInitiatedSLO="true"/>
+                <urn:IDP AssertionsSigned="false" DefaultTargetResource="">
+                    <urn:AccountLinkingAndMapping Type="mapping" IncludeAdditionalAttributes="false"/>
+                    <urn:ErrPageMsg/>
+                </urn:IDP>
+            </urn:RoleExtension>
+        </md:Extensions>
+        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="/312bc45a-ddae-4f43-96f6-58d82c7c6861/saml2"/>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="/312bc45a-ddae-4f43-96f6-58d82c7c6861/saml2"/>
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="/312bc45a-ddae-4f43-96f6-58d82c7c6861/saml2"/>
+        <saml:Attribute Name="http://schemas.microsoft.com/identity/claims/displayname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.microsoft.com/identity/claims/tenantid" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.microsoft.com/identity/claims/identityprovider" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.microsoft.com/claims/authnmethodsreferences" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <saml:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"/>
+    </md:IDPSSODescriptor>
+    <md:RoleDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" xsi:type="urn:PFAvailableCertsRoleDescriptorType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <urn:availableCert>
+            <urn:Base64EncodedCert>MIIC8DCCAdigAwIBAgIQLVhtG6OJEKpCAodJbzX29TANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMDAzMDIwMDU5MzJaFw0yMzAzMDIwMDU5MzJaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtL+12JpE87NRCAgdfannv+wtkbrsN+ob130Dyzv20VMZ7uWeOPSgg8e6bWjCPOXjLIDWfO9Dd7uYWufu2yvMhn8eRX0PNh+nGf7b7BmSczDBAzt5BL4X5P3p2SvjAtPEa+8exi/PfDETmQm8M5kndiXZUmOIivInQaqqE50TLTcf00LTl5rUEw5ijivJzK/DEOOWZSOLZRH4HruLYJzbRiZ8tmmeHC5BaF1lyFxc2QoSlwguICq0DgchgoqWDuTqmpcbO/zOHXEOJB1SMXi30h+jGyysYPsyVWb54opbNa1e3zl5kpJAGlNenH2X4xCWphXi78z/F47a+QsQaZFQPQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAA5lPnC2y1Ooj9Nzi87IHgEgg/YZSH83D4ZU/00dhfiV6/FQ2YakgVI4Eggs8yoBajuyIJ+ThApTlMLnj4G/ZSRq4U1tQ2uoG2aHuIH1cKthLeUtRY4FR2dH74TqxU+izDPQoqQoSw0QpXcNZyqdtzXshhOJLnSeBqV9qvW/FQ8uvRvs4GKxv0LXXZg6I2j4K1YqxMDa/aWK3YkJ9dL5rywm3/Jua579nkXUBRs1TW0LxIlCU1o0w0uFuCa4UHlFjrTEMrP/j2BDTkOOyNWG/kgolUAtsleSHkGnnqnvBNZEyFgTZLRIYb28w8FDIQ+eWOS0Omio6+CNSVrGaSJPqM</urn:Base64EncodedCert>
+            <urn:alias>81yi6selofvcttwzg7cdtgysl</urn:alias>
+        </urn:availableCert>
+    </md:RoleDescriptor>
+    <md:ContactPerson contactType="administrative"/>
+</md:EntityDescriptor>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1583124540710" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1584667127429" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
-        <urn:AuthnSelectionTree treeName="AAD Login - Require MFA" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="AAD Login - Require MFA" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction authnSelectorId="compositeMFASelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <urn:AstChild context="FAIL">
@@ -74,7 +74,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="AAD Login" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="AAD Login" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <urn:AuthnSourceKey type="IDP_CONN">jFyCGhsl_2dTxnOtdlV6B_1LRTJ</urn:AuthnSourceKey>
@@ -87,7 +87,7 @@
                     <urn:AstAction apcId="Zxp6N6W5PH9onACT" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                         <urn:AttributeMapping>
                             <urn1:AttributeMap Name="mail" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-                            <urn1:AttributeMap Name="subject" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            <urn1:AttributeMap Name="subject" Type="LDAP" AttributeSourceId="ldap" Value="entryUUID" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="givenName" Type="IdP Connection" AttributeSourceId="jFyCGhsl_2dTxnOtdlV6B_1LRTJ" Value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="SAML_AUTHN_CTX" Type="Text" Value="1FA" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
                             <urn1:AttributeMap Name="isMemberOf" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
@@ -105,7 +105,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="Internal SAML Applications" disabled="true" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="Internal SAML Applications" disabled="false" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <urn:AuthnSourceKey type="IDP_CONN">IKC7q22q897dx4j9sEMLoE8fWOj</urn:AuthnSourceKey>
@@ -127,7 +127,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="MFA Authentication" disabled="true" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="MFA Authentication" disabled="false" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction authnSelectorId="compositeMFASelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <urn:AstChild context="FAIL">
@@ -172,7 +172,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="Default AuthN Policy" disabled="true" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="Default AuthN Policy" disabled="false" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <urn:AuthnSourceKey type="ADAPTER">HTMLFormPD</urn:AuthnSourceKey>

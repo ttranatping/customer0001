@@ -47,6 +47,7 @@
             <urn1:AttributeMap Name="sub" Type="Token" Value="Username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="p2" Type="Text" Value="AC1234" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="town" Type="Text" Value="Melbourne" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="newattribute" Type="Text" Value="this is my new attr" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="givenName" Type="LDAP" AttributeSourceId="ldap" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="postcode" Type="Text" Value="3000" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="custNum" Type="Text" Value="C0001234" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>

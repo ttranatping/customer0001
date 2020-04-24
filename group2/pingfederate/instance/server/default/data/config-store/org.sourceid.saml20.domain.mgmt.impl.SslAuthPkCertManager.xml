@@ -8,4 +8,5 @@
     <con:map name="internal-saml-app"/>
     <con:map name="https://saml.salesforce.com"/>
     <con:map name="https://sts.windows.net/312bc45a-ddae-4f43-96f6-58d82c7c6861/"/>
+    <con:map name="PasswordVault"/>
 </con:config>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:PluginConfiguration isInheritExtendedContractAttributes="false" name="ltpaTokenGenerator" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
     <urn:Fields>
-        <urn:Field name="LTPA Secret">eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUifQ..5Id_g-hYI3VDmo2AMaW5Aw.u0LjawCRSwbt2dUXKa6Zug.GdnwIKb6jA8pGfaD3DtEqQ</urn:Field>
+        <urn:Field name="LTPA Key Properties">Y29tLmlibS53ZWJzcGhlcmUubHRwYS4zREVTS2V5PVRwWnc2MW5pblNOWWM4YTlGb00vSU5kWFY2YnhlL1MwWHVJUEVzNi8zVG9cPQpjb20uaWJtLndlYnNwaGVyZS5sdHBhLlByaXZhdGVLZXk9a2lVcW1ub2tzV3NHYXZiV1ZNeDVzbFl0T0JtR1ZvS1cwaGh3Rzh3c25ET09LbWZRNUhBdHRnS2FFR1BsY1VuazdRQXZnYjArVG9QOVVZZGV4T0licFYrZGVtWWFVYnRxUGU4NzlWV3pMdVU1L0JpOHV6Umwwd1Zac0VIb1M2TjRWcUV0c3F0cFlSZVM4MnhmZ3dYMlltYlF3TDRlcDhrR3RkQmZiZGtKaFNqWllybm9UdnFUd0VTQ2RRL3RpU3NRWm5oV2pKSzZZMDU3eEwyY1ZOREN4dXlzZlZveVhlTXlRYTN6dDUxTVUzaTBVazVKZm9yV0FlY3p1QlN1ampLNGFLUUlFcVRFWjFCYjRUdEdKR0NCZDZiU1B4OWk5ajV3RWNyZENWMENJbmY4VUs4R3NNYmtkWTZtWWtFSUM0c0s3OFhMckJIUXplZjdWWlRuL1dsTCs5YTlmYWtiYXpwYXVTckM1VHZ0alpBXD0KY29tLmlibS53ZWJzcGhlcmUubHRwYS5QdWJsaWNLZXk9QU9ERFNlWXFqYk1LN3ZLVnBlS2xodWNzd0ozdTNTZGJZbk41RU1EWDk4VnNkcDJNa3RqRS9PRklRbjl1OFRIQm9EVHRONHZSaHh4YlBXSjJwd2k4cTBIcERaMWh4VUJxY1U4dlpDS0NJd1JWTGh4MUxWcGVtN3Y1L1JRcE9HOVF0RXNIYTRKTzhDRStYb2xXc1V6TnpoT2JyVUpjandSbXg4LzhybGZLSEEwWEFRQUIKY29tLmlibS53ZWJzcGhlcmUubHRwYS5LZXlQYXNzd29yZD1hYmMuMTIz</urn:Field>
         <urn:Field name="Prestart minutes">5</urn:Field>
         <urn:Field name="Token duration">10</urn:Field>
     </urn:Fields>

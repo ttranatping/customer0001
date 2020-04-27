@@ -1,0 +1,47 @@
+dn: cn=group.0,ou=groups,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.0
+member: uid=user.0,ou=people,${USER_BASE_DN}
+
+dn: cn=group.1,ou=groups,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: group.1
+member: uid=user.1,ou=people,${USER_BASE_DN}
+
+dn: cn=PFAdminGroup,ou=Groups,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: PFAdminGroup
+member: uid=administrator,ou=people,${USER_BASE_DN}
+member: uid=access2federate,ou=People,${USER_BASE_DN}
+member: uid=martin.poon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=brendan.kermeen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Saurabh.Kumar@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=David.Vernon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Weifeng.Cao@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Trish.Armitage@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Cevan.Thompson@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Jack.Chen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=carl.x.meads@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=andrew.latham@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=steve.dillon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+
+dn: cn=PFCryptoGroup,ou=groups,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: PFCryptoGroup
+member: uid=administrator,ou=people,${USER_BASE_DN}
+
+dn: cn=PFAuditorGroup,ou=groups,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: PFAuditorGroup
+member: uid=auditor,ou=people,${USER_BASE_DN}
+
+dn: cn=PFUserAdminGroup,ou=groups,${USER_BASE_DN}
+objectClass: top
+objectClass: groupOfNames
+cn: PFUserAdminGroup
+member: uid=administrator,ou=people,${USER_BASE_DN}

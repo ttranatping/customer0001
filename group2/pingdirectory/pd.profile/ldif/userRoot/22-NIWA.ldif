@@ -8,31 +8,67 @@ objectClass: top
 objectClass: organizationalUnit
 ou: groups
 
-dn: cn=acl-junction1-user,ou=groups,ou=NIWA,${USER_BASE_DN}
-objectClass: top
-objectClass: groupOfNames
-cn: acl-junction1-user
-o: /WebSEAL/aus/Junction1
-member: uid=user.1,ou=people,${USER_BASE_DN}
-
 dn: cn=acl-junction1-admin,ou=groups,ou=NIWA,${USER_BASE_DN}
-objectClass: top
 objectClass: groupOfNames
+objectClass: top
 cn: acl-junction1-admin
-o: /WebSEAL/aus/Junction1/admin/dashboard
-member: uid=user.1,ou=people,${USER_BASE_DN}
-
-dn: cn=acl-junction2-user,ou=groups,ou=NIWA,${USER_BASE_DN}
-objectClass: top
-objectClass: groupOfNames
-cn: acl-junction2-user
-o: /WebSEAL/aus/Junction2
 member: uid=user.0,ou=people,${USER_BASE_DN}
-member: uid=user.1,ou=people,${USER_BASE_DN}
+member: uid=ttran@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=bob@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=brendan.kermeen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Saurabh.Kumar@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=David.Vernon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Weifeng.Cao@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Trish.Armitage@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Cevan.Thompson@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Jack.Chen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=carl.x.meads@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=andrew.latham@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=steve.dillon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+o: /WebSEAL/aus/Junction1/admin/dashboard
 
 dn: cn=acl-junction2-admin,ou=groups,ou=NIWA,${USER_BASE_DN}
-objectClass: top
 objectClass: groupOfNames
+objectClass: top
 cn: acl-junction2-admin
+member: uid=bob@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=user.1,ou=people,${USER_BASE_DN}
 o: /WebSEAL/aus/Junction2/admin/dashboard
+
+dn: cn=acl-junction2-user,ou=groups,ou=NIWA,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: acl-junction2-user
+member: uid=ttran@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
 member: uid=user.0,ou=people,${USER_BASE_DN}
+member: uid=Saurabh.Kumar@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=David.Vernon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Weifeng.Cao@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Trish.Armitage@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Cevan.Thompson@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Jack.Chen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=carl.x.meads@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=andrew.latham@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=steve.dillon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+o: /WebSEAL/aus/Junction2
+
+dn: cn=acl-junction1-user,ou=groups,ou=NIWA,${USER_BASE_DN}
+objectClass: groupOfNames
+objectClass: top
+cn: acl-junction1-user
+member: uid=ttran@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=bob@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=user.0,ou=people,${USER_BASE_DN}
+member: uid=brendan.kermeen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=martin.poon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Saurabh.Kumar@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=David.Vernon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Weifeng.Cao@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Trish.Armitage@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Cevan.Thompson@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=Jack.Chen@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=carl.x.meads@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=andrew.latham@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+member: uid=steve.dillon@pingapac.onmicrosoft.com,ou=people,${USER_BASE_DN}
+o: /WebSEAL/aus/Junction1
+

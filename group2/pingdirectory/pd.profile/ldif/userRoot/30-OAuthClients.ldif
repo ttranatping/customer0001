@@ -79,7 +79,7 @@ pf-oauth-client-supplemental-info: 28:id_token_signed_response_alg:null
 dn: pf-oauth-client-id=pingaccessAc,ou=oauthClients,${USER_BASE_DN}
 objectClass: top
 objectClass: pf-oauth-client
-pf-oauth-client-name: pingaccessAc
+pf-oauth-client-name: NAB Internal Applications
 pf-oauth-client-last-modified: 1551372046956
 pf-oauth-client-restrict-scopes: FALSE
 pf-oauth-client-require-signed-requests: FALSE

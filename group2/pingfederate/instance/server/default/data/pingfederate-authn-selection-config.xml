@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1584667127429" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1588031161982" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
         <urn:AuthnSelectionTree treeName="AAD Login - Require MFA" disabled="true" authnApiApp="">
             <urn:AstRoot context="">

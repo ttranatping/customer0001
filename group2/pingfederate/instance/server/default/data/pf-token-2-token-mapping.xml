@@ -4,7 +4,7 @@
         <urn:AttributeMapping>
             <urn1:AttributeMap Name="subject" Type="LDAP" AttributeSourceId="ldap" Value="uid" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
-                <urn1:Parameter Name="filter" Value="entryUUID=${sub}"/>
+                <urn1:Parameter Name="filter" Value="(|(entryUUID=${sub})(uid=${sub}))"/>
                 <urn1:Parameter Name="search_base" Value="ou=people,dc=example,dc=com"/>
                 <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
                 <urn1:Parameter Name="memberof_nested_group" Value="false"/>

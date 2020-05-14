@@ -16,4 +16,5 @@
     <con:item name="5dbbcc2fe03e3fedbfe80ebe0c228c7b:PingConnect:EXPIRED">5dbbcc2fe03e3fedbfe80ebe0c228c7b:PingConnect:EXPIRED</con:item>
     <con:item name="5dbbcc2fe03e3fedbfe80ebe0c228c7b:PingConnect:FINAL_WARN">5dbbcc2fe03e3fedbfe80ebe0c228c7b:PingConnect:FINAL_WARN</con:item>
     <con:item name="5dbbcc2fe03e3fedbfe80ebe0c228c7b:PingConnect:INITIAL_WARN">5dbbcc2fe03e3fedbfe80ebe0c228c7b:PingConnect:INITIAL_WARN</con:item>
+    <con:item name="1680675:WARN">2020-05-21</con:item>
 </con:config>

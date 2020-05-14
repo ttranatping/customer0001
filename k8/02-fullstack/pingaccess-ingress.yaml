@@ -41,7 +41,69 @@ spec:
         backend:
           serviceName: pingfederate
           servicePort: 9032
-
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-nabtest1-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: nabtest1-0001.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingaccess
+          servicePort: 443
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-nabtest2-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: nabtest2-0001.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingaccess
+          servicePort: 443
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pingaccess-nabtest3-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    kubernetes.io/ingress.class: nginx-public-passthrough
+    # Possible fix for some 502 failures on admin assets and api requests.
+    nginx.ingress.kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+  - host: nabtest3-0001.pingapac.com
+    http:
+      paths:
+      # This rule gives internal access to the pingaccess admin services.
+      - path: /
+        backend:
+          serviceName: pingaccess
+          servicePort: 443
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress

@@ -37,7 +37,7 @@ spec:
         - secretRef:
             name: devops-secret
             optional: true
-        image: pingidentity/pingaccess:6.0.0-alpine-edge
+        image: pingidentity/pingaccess:6.1.0-Beta-alpine-edge
         imagePullPolicy: Always
         name: pingaccess
         ports:

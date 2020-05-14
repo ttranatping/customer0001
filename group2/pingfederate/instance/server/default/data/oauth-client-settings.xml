@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:ClientSetting enableDynamicClientRegistration="false" requireInitialAccessToken="false" initialAccessTokenScope="" restrictScopes="false" enforceOneTimeJWT="false" persistentGrantExpirationTime="0" persistentGrantExpirationTimeUnit="d" persistentGrantIdleTimeout="0" persistentGrantIdleTimeoutTimeUnit="d" idTokenSigningAlgorithm="" policyGroupId="" isRequireSignedRequest="false" defaultAccessTokenManagerId="" clientCertIssuerDN="" deviceFlowSettingType="SERVER_DEFAULT" requireProofKeyForCodeExchange="false" cibaPolicyId="" cibaPollingInterval="3" cibaRequireSignedRequests="false" tokenExchangeProcessorPolicyId="" xmlns:urn="urn:pingidentity.com:pf:oauth:client:setting">
+    <urn:ExtendedMetadata parameterName="support_loa3" parameterDescription="" isMultiValued="false"/>
+    <urn:ExtendedMetadata parameterName="support_loa2" parameterDescription="" isMultiValued="false"/>
     <urn:ExtendedMetadata parameterName="require_mfa" parameterDescription="Require MFA" isMultiValued="false"/>
+    <urn:ExtendedMetadata parameterName="loa_support" parameterDescription="" isMultiValued="true"/>
 </urn:ClientSetting>

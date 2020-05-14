@@ -5,10 +5,29 @@
         <ldap:principal>cn=pingfederate</ldap:principal>
         <ldap:use-ssl>false</ldap:use-ssl>
         <ldap:use-dns-srv-records>false</ldap:use-dns-srv-records>
-        <ldap:credentials>eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiI5LjIuMS4xIn0..ZLVmgXJVySez9CFG-XpFjA.rSvFI6kQuVjdUVpRYZQfyg.YIs9McL1ZipQCkIuIWvnwQ</ldap:credentials>
+        <ldap:ad-referral>false</ldap:ad-referral>
+        <ldap:credentials>eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUifQ..ML_2OQsCalNoLmUE11XH_A.WQmwxRrvld5Wg902f2rVAg.youM8friuJKUBgpz_sVpwA</ldap:credentials>
         <ldap:authenticationMeth>simple</ldap:authenticationMeth>
         <ldap:description>pingdirectory</ldap:description>
         <ldap:name>pingdirectory</ldap:name>
         <ldap:binaryAttributes/>
+        <ldap:ldapHostTagList>
+            <ldap:tagEntry host="pingdirectory" tags=""/>
+        </ldap:ldapHostTagList>
+    </ldap:ldap-source>
+    <ldap:ldap-source id="LDAP-0F8982E395F782F10DA6AA4FF4D9699BFCF71F02" maskAttributeValues="false" ldapType="PingDirectory" ldapTypeDesc="PingDirectory" testOnBorrow="false" testOnReturn="false" createIfNecessary="true" minIdle="10" maxActive="100" maxWait="-1" timeBetweenEvictionRunsMillis="60000" readTimeoutMillis="3000" connTimeoutMillis="3000" verifyHost="true" dnsTtlMillis="60000" ldapDnsSrvPrefix="_ldap._tcp" ldapsDnsSrvPrefix="_ldaps._tcp">
+        <ldap:host>54.184.58.70:1389</ldap:host>
+        <ldap:principal>cn=Directory Manager</ldap:principal>
+        <ldap:use-ssl>false</ldap:use-ssl>
+        <ldap:use-dns-srv-records>false</ldap:use-dns-srv-records>
+        <ldap:ad-referral>false</ldap:ad-referral>
+        <ldap:credentials>eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2Iiwia2lkIjoiRW1JY1UxOVdueSIsInZlcnNpb24iOiIxMC4wLjAuMTUifQ..tmsFiVXsQmyeUeLKJqEBJA.giEzPpaYHQCh-HHkGJw-cg.RznVKe82OZiffR7jA4ztfA</ldap:credentials>
+        <ldap:authenticationMeth>simple</ldap:authenticationMeth>
+        <ldap:description>pingdirectory-idpv2</ldap:description>
+        <ldap:name>pingdirectory-idpv2</ldap:name>
+        <ldap:binaryAttributes/>
+        <ldap:ldapHostTagList>
+            <ldap:tagEntry host="54.184.58.70:1389" tags=""/>
+        </ldap:ldapHostTagList>
     </ldap:ldap-source>
 </ldap:ldap-sources>

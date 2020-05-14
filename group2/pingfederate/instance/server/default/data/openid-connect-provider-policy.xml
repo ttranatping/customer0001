@@ -74,9 +74,10 @@
     </urn:ProviderPolicyGroup>
     <urn:ProviderPolicyGroup policyId="eBOBSOIDC" idTokenLife="5" includeSriInIdToken="true" includeUserInfoInIdToken="false" includeSHashInIdToken="true" returnIdTokenOnRefreshGrant="false" policyName="eBOBSOIDC" accessTokenManagerId="jwt">
         <urn:UserInfoMapping>
+            <urn1:AttributeMap Name="iv-user" Type="Text" Value="p12345" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="object_codes" Type="Expression" Value="#ldapID=&quot;LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3&quot;,  #ldapReturnAttributes=&quot;o&quot;.split(&quot;x&quot;),  #ldapBase=&quot;ou=groups,ou=eBOBS,dc=example,dc=com&quot;,  #uid = #this.get(&quot;uid&quot;).toString(), #ldapSearchFilter=&quot;(&amp;(member=uid=&quot; + #uid + &quot;,ou=people,dc=example,dc=com)(o=*))&quot;,  #dataSourceManager = @org.sourceid.saml20.domain.mgmt.MgmtFactory@getDataSourceManager(),  #ldapDataSource = #dataSourceManager.getLdapDataSource(#ldapID),  #ldapResult = #ldapDataSource.getAttributesOfMatchingObjects(ldapBase,ldapSearchFilter,2,ldapReturnAttributes,0),  #i=0,  #result = new java.util.HashSet(),  #ldapResult.{    #objectCodeList = #ldapResult[#i].get(&quot;o&quot;).getValuesAsCollection(),   #j = 0,   #objectCodeList.{     #result.add(#objectCodeList[#j]),     #j=#j+1   },   #i=#i+1  },  new org.sourceid.saml20.adapter.attribute.AttributeValue(#result) " xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="sub" Type="Token" Value="Username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
-            <urn1:AttributeMap Name="ivgroups" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+            <urn1:AttributeMap Name="iv-groups" Type="LDAP" AttributeSourceId="ldap" Value="isMemberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeMap Name="nagmemberof" Type="LDAP" AttributeSourceId="ldap" Value="l" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
             <urn1:AttributeSource Id="ldap" Description="ldap" Type="LDAP" DataSourceId="LDAP-D803C87FAB2ADFB4B0A947B64BA6F0C6093A5CA3" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
                 <urn1:Parameter Name="filter" Value="(|(entryUUID=${Username})(uid=${Username}))"/>
@@ -89,7 +90,11 @@
         <urn:scopeAttributesMap/>
         <urn:attributeContractInclusionMap>
             <urn:item>
-                <urn:key>ivgroups</urn:key>
+                <urn:key>iv-user</urn:key>
+                <urn:value includeInIdToken="false" includeInUserInfo="true"/>
+            </urn:item>
+            <urn:item>
+                <urn:key>iv-groups</urn:key>
                 <urn:value includeInIdToken="false" includeInUserInfo="true"/>
             </urn:item>
         </urn:attributeContractInclusionMap>

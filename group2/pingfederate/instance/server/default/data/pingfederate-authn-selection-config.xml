@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urn:AuthnSelectionConfig lastModifiedMillis="1588052238362" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+<urn:AuthnSelectionConfig lastModifiedMillis="1589383386732" enableAuthnSelection="true" enableSpAuthnSelection="true" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
     <urn:AuthnSelectionTrees>
-        <urn:AuthnSelectionTree treeName="AAD Login - Require MFA" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="AAD Login - Require MFA" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction authnSelectorId="compositeMFASelector" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <urn:AstChild context="FAIL">
@@ -74,7 +74,7 @@
                 </urn:AstChild>
             </urn:AstRoot>
         </urn:AuthnSelectionTree>
-        <urn:AuthnSelectionTree treeName="AAD Login" disabled="false" authnApiApp="">
+        <urn:AuthnSelectionTree treeName="AAD Login" disabled="true" authnApiApp="">
             <urn:AstRoot context="">
                 <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                     <urn:AuthnSourceKey type="IDP_CONN">jFyCGhsl_2dTxnOtdlV6B_1LRTJ</urn:AuthnSourceKey>
